@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>IMG uploader</title>
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <!-- Sitback header -->
+    <div class="sitback-header">
+      <div class="util-holder">
+        <div class="util-inner">
+          <img src="img/phone.svg" class="img-responsive" alt="">
+          <a href="tel:+61 2 9247 2223">+61 2 9247 2223</a>
+          &nbsp;|&nbsp;
+          <a href="https://twitter.com/sitback" target="_blank">
+            <img src="img/twitter.svg" class="img-responsive" alt="">
+          </a>
+          &nbsp; |&nbsp;
+          <a href="https://www.linkedin.com/company/sitback-solutions" target="_blank">
+            <img src="img/linkedin.svg" class="img-responsive" alt="">
+          </a>
+        </div>
+      </div>
+      <div class="navbar">
+        <a href="http://www.sitback.com.au/" class="logo"><img src="img/logo.svg" alt=""></a>
+      </div>
+    </div>
+
+
+    <div class="flex-row">
+      <div class="sidebar" data-spy="affix" data-offset-top="40">
+        <div class="sidebar-item">
+          <h4>Upload the image here:</h4>
+          <span class="upload-button btn btn-block">
+            Upload Image&nbsp;&nbsp;
+            <span class="glyphicon glyphicon-open"></span>
+            <input class="upload" type="file" id="uploaderFile">
+          </span>
+        </div>
+
+        <div class="sidebar-item" id="overflow-checkbox-wrap">
+          <div>
+            <h5>Toggle fill type:&nbsp;</h5>
+            <select id="toggle-bg-fill" class="form-control">
+              <option value="cover">Cover</option>
+              <option value="contain">Contain</option>
+            </select>
+          </div>
+          <hr>
+          <div>
+            <h5>Show overflow</h5>
+            <input id="overflow-checkbox" type="checkbox">
+          </div>
+        </div>
+
+        <div class="sidebar-item">
+          <h5>Set a section height:&nbsp;</h5>
+          <div class="form-inline">
+            <div class="input-group">
+              <input id="input-height" class="form-control" type="text" placeholder="">
+              <span class="input-group-addon">px</span>
+            </div>
+            <button id="section-height-clear" class="btn">Clear</button>
+          </div>
+        </div>
+
+        <div class="sidebar-item">
+          <h5>Set background position:</h5>
+          <ul class="bg-position-list">
+            <li class="bg-position-item top left">
+              <input name="bg-position" type="radio" id="bgTopLeft" data-alignment="top left">
+              <label for="bgTopLeft">
+                <span class="glyphicon glyphicon-arrow-left arrow-rotate-45"></span>
+              </label>
+            </li>
+            <li class="bg-position-item top center">
+              <input name="bg-position" type="radio" id="bgTop" data-alignment="top">
+              <label for="bgTop">
+                <span class="glyphicon glyphicon-arrow-up"></span>
+              </label>
+            </li>
+            <li class="bg-position-item top right">
+              <input name="bg-position" name="bg-position" type="radio" id="bgTopRight" data-alignment="top right">
+              <label for="bgTopRight">
+                <span class="glyphicon glyphicon-arrow-up  arrow-rotate-45"></span>
+              </label>
+            </li>
+            <li class="bg-position-item middle left">
+              <input name="bg-position" type="radio" id="bgLeft" data-alignment="left">
+              <label for="bgLeft">
+                <span class="glyphicon glyphicon-arrow-left"></span>
+              </label>
+            </li>
+            <li class="bg-position-item middle center">
+              <input name="bg-position" type="radio" id="bgCenter" checked="checked" data-alignment="center">
+              <label for="bgCenter">
+                <span class="glyphicon glyphicon-record"></span>
+              </label>
+            </li>
+            <li class="bg-position-item middle right">
+              <input name="bg-position" type="radio" id="bgRight" data-alignment="right">
+              <label for="bgRight">
+                <span class="glyphicon glyphicon-arrow-right"></span>
+              </label>
+            </li>
+            <li class="bg-position-item bottom left">
+              <input name="bg-position" type="radio" id="bgBottomLeft" data-alignment="bottom left">
+              <label for="bgBottomLeft">
+                <span class="glyphicon glyphicon-arrow-down arrow-rotate-45"></span>
+              </label>
+            </li>
+            <li class="bg-position-item bottom center">
+              <input name="bg-position" type="radio" id="bgBottom" data-alignment="bottom">
+              <label for="bgBottom">
+                <span class="glyphicon glyphicon-arrow-down"></span>
+              </label>
+            </li>
+            <li class="bg-position-item bottom right">
+              <input name="bg-position" type="radio" id="bgBottomRight" data-alignment="bottom right">
+              <label for="bgBottomRight">
+                <span class="glyphicon glyphicon-arrow-right arrow-rotate-45"></span>
+              </label>
+            </li>
+          </ul>
+        </div>
+
+        <div class="sidebar-item">
+          <h5>Choose devices:&nbsp;</h5>
+          <ul class="list-unstyled" id="device-list">
+            <li class="checkbox">
+              <input type="checkbox" id="checkbox-iphone" checked="checked">
+              <label for="checkbox-iphone">&nbsp;iPhone 6</label>
+            </li>
+            <li class="checkbox">
+              <input type="checkbox" id="checkbox-s7" checked="checked">
+              <label for="checkbox-s7">&nbsp;Samsung Galaxy S7</label>
+            </li>
+            <li class="checkbox">
+              <input type="checkbox" id="checkbox-ipad">
+              <label for="checkbox-ipad">&nbsp;iPad</label>
+            </li>
+            <li class="checkbox">
+              <input type="checkbox" id="checkbox-small-desktop" checked="checked">
+              <label for="checkbox-small-desktop">&nbsp;Small Desktop</label>
+            </li>
+            <li class="checkbox">
+              <input type="checkbox" id="checkbox-hdtv">
+              <label for="checkbox-hdtv">&nbsp;HDTV</label>
+            </li>
+            <li class="checkbox">
+              <input type="checkbox" id="checkbox-custom" checked="checked">
+              <label for="checkbox-custom">&nbsp;Custom</label>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="content-area">
+        <div class="jumbotron header">
+        <!-- <div class="jumbotron header" data-spy="affix" data-offset-top="170"> -->
+          <h1>Background image thing.</h1>
+        </div>
+
+        <div class="content">
+          <div class="intro row">
+            <div class="col-lg-3">
+              <span class="feature-icon glyphicon glyphicon-picture"></span>
+            </div>
+            <div class="col-md-7 col-lg-5">
+              <p class="lead">Here's a description of what this thing does...
+              <br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis aspernatur adipisci veritatis sequi repellat iste amet asperiores ut cum animi. Fuga magnam, deserunt molestiae ratione. Corrupti fugiat, non. Consectetur, doloremque.</p>
+            </div>
+          </div>
+
+          <hr class="thick">
+
+          <h2>Devices:</h2>
+
+          <hr>
+
+          <!-- Mobile -->
+          <div id="iphone" class="device-wrapper">
+            <h4 class="text-center">iPhone 6 <small>375 x 667px</small></h4>
+            <button class="center-block btn btn-primary btn-device-rotate" type="button">
+              Rotate Device
+              &nbsp;<span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+            </button>
+            <div class="device iphone">
+              <div class="image-background overflow"></div>
+              <div class="device-screen image-background"></div>
+            </div>
+            <hr>
+          </div>
+
+          <div id="s7" class="device-wrapper">
+            <h4 class="text-center">Samsung Galaxy S7 <small>375 x 667px</small></h4>
+            <button class="center-block btn btn-primary btn-device-rotate" type="button">
+              Rotate Device
+              &nbsp;<span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+            </button>
+            <div class="device s7">
+              <div class="image-background overflow"></div>
+              <div class="device-screen image-background"></div>
+            </div>
+            <hr>
+          </div>
+
+
+          <!-- Tablet -->
+          <div id="ipad" class="device-wrapper">
+            <h4 class="text-center">Tablet <small>768 x 1024px</small></h4>
+            <button class="center-block btn btn-primary btn-device-rotate" type="button">
+              Rotate Device
+              &nbsp;<span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+            </button>
+            <div class="device tablet">
+              <div class="image-background overflow"></div>
+              <div class="device-screen image-background"></div>
+            </div>
+            <hr>
+          </div>
+
+
+          <!-- Small Desktop -->
+          <div id="small-desktop" class="device-wrapper">
+            <h4 class="text-center">Small Desktop <small>1440 x 900px (scaled 0.6x)</small></h4>
+            <div class="device small-desktop">
+              <div class="image-background overflow"></div>
+              <div class="device-screen image-background"></div>
+            </div>
+            <hr>
+          </div>
+
+
+          <!-- HD TV -->
+          <div id="hdtv" class="device-wrapper">
+            <h4 class="text-center">HDTV <small>1440 x 900px (scaled 0.6x)</small></h4>
+            <div class="device hdtv">
+              <div class="image-background overflow"></div>
+              <div class="device-screen image-background"></div>
+            </div>
+            <hr>
+          </div>
+
+
+          <!-- Custom -->
+          <div id="custom" class="device-wrapper">
+            <h4 class="text-center">Custom</h4>
+            <div class="row">
+              <div class="col-sm-4 col-sm-offset-4">
+                <div class="flex-justify-center">
+                  <div class="col-xs-4">
+                    <div class="input-group">
+                      <input id="custom-device-width" class="form-control" type="text" placeholder="Width">
+                      <span class="input-group-addon">px</span>
+                    </div>
+                  </div>
+
+                  <div>&nbsp;x&nbsp;</div>
+
+                  <div class="col-xs-4">
+                    <div class="input-group">
+                      <input id="custom-device-height" class="form-control" type="text" placeholder="Height">
+                      <span class="input-group-addon">px</span>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-3">
+                    <button id="device-custom-clear" class="btn btn-block">Clear</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="device custom">
+              <div class="image-background overflow"></div>
+              <div class="device-screen image-background"></div>
+            </div>
+          </div>
+
+        </div>
+
+
+        <!-- Footer -->
+        <div class="footer">
+          <div class="best-plack-to-work">
+            <img src="img/bptw_slim.png" alt="" />
+          </div>
+
+          <div class="contact">
+            <div class="address">
+              <p>
+                39-41 Lower Fort Street
+                <br> Sydney NSW 2000
+                <br> Australia
+              </p>
+            </div>
+            <p>
+              <img src="img/phone.svg" alt="Call us" class="icon"><a href="tel:+61 2 9247 2223">+61 2 9247 2223</a>
+              <br>
+              <img src="img/envelope.svg" alt="Email us" class="icon"><a href="mailto:hello@sitback.com.au">hello@sitback.com.au</a>
+            </p>
+          </div>
+          <p class="copyright">
+            &copy; Sitback /
+            <span class="sbw-abn">ABN 67 118 118 737</span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="js/upload-image.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  </body>
+</html>

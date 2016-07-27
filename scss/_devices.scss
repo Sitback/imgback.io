@@ -1,0 +1,108 @@
+
+// Devices
+.device-wrapper {
+  display: none;
+  overflow: hidden;
+}
+
+.device {
+  position: relative;
+  margin: 20px auto 80px;
+  overflow: visible;
+  border-radius: 60px;
+  background-color: $tundora;
+  border: 1px solid $mine-shaft;
+  box-shadow: 0 0 0 4px $silver-chalice;
+  // transition: .4s all ease-in-out;
+}
+
+.image-background {
+  background-position: center center;
+  // transition: .4s height ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+
+  // Image positioning
+  &.top {
+    background-position: center top;
+  }
+  &.top.left {
+    background-position: left top;
+  }
+  &.top.right {
+    background-position: right top;
+  }
+  &.center {
+    background-position: center center;
+  }
+  &.left {
+    background-position: left center;
+  }
+  &.right {
+    background-position: right center;
+  }
+  &.bottom {
+    background-position: center bottom;
+  }
+  &.bottom.left {
+    background-position: left bottom;
+  }
+  &.bottom.right {
+    background-position: right bottom;
+  }
+
+  &.top {
+    top: 0;
+  }
+  &.center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &.bottom {
+    bottom: 0;
+    top: auto;
+  }
+  &.left {
+    left: 0;
+    right: auto;
+  }
+  &.right {
+    right: 0;
+    left: auto;
+  }
+  &.top,
+  &.bottom {
+    transform: translate(-50%, 0);
+  }
+  &.left,
+  &.right {
+    transform: translate(0);
+  }
+  &.top.left,
+  &.top.right,
+  &.bottom.left,
+  &.bottom.right {
+    transform: translate(0);
+  }
+}
+
+.overflow {
+  display: none;
+  width: 1920px;
+  opacity: .4;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+
+  // Image positioning
+
+}
+
+.device-screen {
+  position: absolute;;
+  background-color: $tundora;
+  background-size: cover;
+  background-repeat: no-repeat;
+}

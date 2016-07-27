@@ -1,0 +1,24 @@
+// Custom
+
+$custom-width: 1024px;
+$custom-height: 768px;
+
+
+.custom {
+  width: $custom-width + 80px; // 1024px + left and right border width
+  height: $custom-height + 80px; // 768px + top and bottom border width
+  border-width: 40px;
+  box-sizing: content-box;
+  // place borders on outside so custom dimension inline styles interferring
+
+  .device-screen {
+    width: $custom-width;
+    height: $custom-height;
+    max-height: $custom-height;
+  }
+
+  .overflow {
+    height: $custom-height;
+    max-height: $custom-height;
+  }
+}

@@ -1,0 +1,34 @@
+// Sitback footer
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 173px;
+  padding: 20px 30px 30px;
+  background-color: $mine-shaft;
+  color: $white;
+  font-size: 16px;
+  line-height: 1.8em;
+}
+
+.copyright {
+  flex: 2 2 100%;
+  margin-top: 50px;
+  border-bottom: 1px solid $tundora;
+  font-weight: 300;
+}
+
+.contact {
+  margin-top: 40px;
+
+  img {
+    height: 16px;
+    padding-right: 10px;
+  }
+
+  a {
+    color: $pomegranate;
+  }
+}

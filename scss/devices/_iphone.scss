@@ -1,0 +1,77 @@
+// Mobile
+
+$iphone-width: 375px;
+$iphone-height: 667px;
+
+.iphone {
+  width: $iphone-width + 40px; // 375px + left and right border width
+  height: $iphone-height + 160px; // 667px + top and bottom border width
+  border-width: 80px 20px;
+
+  // Microphone
+  &::before {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-67%);
+    width: 100px;
+    height: 17px;
+    content: '';
+    background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMTkuNSAyMC41IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxMTkuNSAyMC41Ij48Y2lyY2xlIGZpbGw9IiMzQzNEM0QiIGN4PSIxMC45IiBjeT0iMTAuNCIgcj0iOC4xIi8+PHBhdGggZmlsbD0iIzI5MjcyOCIgZD0iTTExMy42IDEzLjJoLTY0Yy0xLjYgMC0yLjktMS4zLTIuOS0yLjkgMC0xLjYgMS4zLTIuOSAyLjktMi45aDY0YzEuNiAwIDIuOSAxLjMgMi45IDIuOSAwIDEuNy0xLjMgMi45LTIuOSAyLjl6Ii8+PC9zdmc+') 0 0 no-repeat;
+  }
+
+  // Home button
+  &::after {
+    position: absolute;
+    bottom: -67px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 55px;
+    height: 55px;
+    border: 3px solid $tundora;
+    border-radius: 50%;
+    content: '';
+  }
+
+  .device-screen {
+    width: $iphone-width;
+    height: $iphone-height;
+    max-height: $iphone-height;
+  }
+
+  .overflow {
+    height: $iphone-height;
+    max-height: $iphone-height;
+  }
+
+  &.landscape {
+    width: $iphone-height + 160px; // 667px + left and right border width
+    height: $iphone-width + 40px; // 375px + top and bottom border width
+    border-width: 20px 80px;
+    
+    // Microphone
+    &::before {
+      top: 50%;
+      left: 640px;
+      transform: translateY(-67%) rotate(90deg);
+    }
+    
+    // Home button
+    &::after {
+      bottom: 50%;
+      left: -68px;
+      transform: translateY(50%);
+    }
+
+    .device-screen {
+      width: $iphone-height;
+      height: $iphone-width;
+      max-height: $iphone-width;
+    }
+
+    .overflow {
+      height: $iphone-width;
+      max-height: $iphone-width;
+    }
+  }
+}

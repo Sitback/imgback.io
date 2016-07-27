@@ -1,0 +1,57 @@
+// Small Desktop
+
+$small-desktop-width: 1440px;
+$small-desktop-height: 900px;
+
+.small-desktop {
+  position: relative;
+  width: $small-desktop-width + 100px; // 1440px + left and right border width
+  height: $small-desktop-height + 130px; // 900px + top and bottom border width
+  border-width: 50px 50px 80px;
+  transform: scale(0.6) translate(0, -32%);
+
+  // Laptop Base
+  &:after {
+    position: absolute;
+    bottom: -95px;
+    width: 1700px;
+    content: '';
+    height: 55px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border-radius: 10px 5px 40px 40px;
+    box-shadow: 0 10px 6px -7px rgba($black, 0.5);
+    background-color: $silver;
+    background: linear-gradient(to bottom, $alto 0%, $alto 74%, $silver-chalice 75%, $silver-chalice 100%);
+  }
+
+  .device-screen {
+    width: $small-desktop-width;
+    height: $small-desktop-height;
+    max-height: $small-desktop-height;
+  }
+
+  .overflow {
+    height: $small-desktop-width;
+    max-height: $small-desktop-height;
+  }
+}
+
+.scale-small {
+  -webkit-transform: scale(0.5) translate(-100%, -50%);
+  -ms-transform: scale(0.5) translate(-100%, -50%);
+  transform: scale(0.5) translate(-100%, -50%);
+  left: 50%;
+}
+
+.scale-medium {
+  -webkit-transform: scale(0.75) translate(-5%, -15%);
+  -ms-transform: scale(0.75) translate(-5%, -15%);
+  transform: scale(0.75) translate(-5%, -15%);
+}
+
+.scale-reset {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}

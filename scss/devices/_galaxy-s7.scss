@@ -1,0 +1,80 @@
+// Samsung Galaxy S7
+
+$s7-width: 360px;
+$s7-height: 640px;
+
+.s7 {
+  width: $s7-width + 10px; // 375px + left and right border width
+  height: $s7-height + 140px; // 667px + top and bottom border width
+  border-width: 70px 5px;
+  border-radius: 50px;
+  border-color: #f6f6f6;
+
+  // Microphone
+  &::before {
+    position: absolute;
+    top: -55px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 170px;
+    height: 20px;
+    content: '';
+    background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDMuNSAyMC4zIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxNDMuNSAyMC4zIj48Y2lyY2xlIGZpbGw9IiMzQzNEM0QiIGN4PSIyNC45IiBjeT0iOC41IiByPSI0LjMiLz48Y2lyY2xlIGZpbGw9IiMzQzNEM0QiIGN4PSIzNi4xIiBjeT0iOC41IiByPSI0LjMiLz48cGF0aCBmaWxsPSIjMjkyNzI4IiBkPSJNOTMuMSAxMS4yaC00MS45Yy0xLjUgMC0yLjgtMS4yLTIuOC0yLjhzMS4yLTIuOCAyLjgtMi44aDQxLjljMS41IDAgMi44IDEuMiAyLjggMi44cy0xLjMgMi44LTIuOCAyLjh6Ii8+PGNpcmNsZSBmaWxsPSIjM0MzRDNEIiBjeD0iMTM0LjciIGN5PSIxMCIgcj0iNy40Ii8+PC9zdmc+') center top no-repeat;
+  }
+
+  // Home button
+  &::after {
+    position: absolute;
+    bottom: -52px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 35px;
+    border: 3px solid #999;
+    border-radius: 15px;
+    content: '';
+  }
+
+  .device-screen {
+    width: $s7-width;
+    height: $s7-height;
+    max-height: $s7-height;
+  }
+
+  .overflow {
+    height: $s7-height;
+    max-height: $s7-height;
+  }
+
+
+  &.landscape {
+    width: $s7-height + 140px; // 667px + left and right border width
+    height: $s7-width + 10px; // 375px + top and bottom border width
+    border-width: 5px 70px;
+    
+    // Microphone
+    &::before {
+      top: 50%;
+      left: 610px;
+      transform: translateY(-50%) rotate(90deg);
+    }
+    
+    // Home button
+    &::after {
+      bottom: 50%;
+      left: -90px;
+      transform: translateY(50%) rotate(90deg);
+    }
+
+    .device-screen {
+      width: $s7-height;
+      height: $s7-width;
+      max-height: $s7-width;
+    }
+
+    .overflow {
+      height: $s7-width;
+      max-height: $s7-width;
+    }
+  }
+}

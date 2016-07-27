@@ -1,0 +1,78 @@
+// Tablet
+
+$ipad-width: 768px;
+$ipad-height: 1024px;
+
+.tablet {
+  width: $ipad-width + 40px; // 768px + left and right border width
+  height: $ipad-height + 160px; // 1024px + top and bottom border width
+  border-width: 80px 20px;
+
+  &::before,
+  &::after {
+    position: absolute;
+    transform: translateX(-67%);
+    content: '';
+    border-radius: 50%;
+  }
+
+  // Camera
+  &::before {
+    top: -45px;
+    left: 50%;
+    width: 15px;
+    height: 15px;
+    background-color: $tundora;
+  }
+
+  // Home Button
+  &::after {
+    bottom: -67px;
+    left: 50%;
+    width: 55px;
+    height: 55px;
+    border: 3px solid $tundora;
+  }
+
+  .device-screen {
+    width: $ipad-width;
+    height: $ipad-height;
+    max-height: $ipad-height;
+  }
+
+  .overflow {
+    height: $ipad-height;
+    max-height: $ipad-height;
+  }
+
+  &.landscape {
+    width: $ipad-height + 160px; // 1024px + left and right border width
+    height: $ipad-width + 40px; // 768px + top and bottom border width
+    border-width: 20px 80px;
+
+    // Camera
+    &::before {
+      top: 50%;
+      left: 1060px;
+      transform: translateY(-67%) rotate(90deg);
+    }
+
+    // Home Button
+    &::after {
+      bottom: 50%;
+      left: -68px;
+      transform: translateY(50%);
+    }
+
+    .device-screen {
+      width: $ipad-height;
+      height: $ipad-width;
+      max-height: $ipad-width;
+    }
+
+    .overflow {
+      height: $ipad-width;
+      max-height: $ipad-width;
+    }
+  }
+}

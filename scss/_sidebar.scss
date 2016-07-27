@@ -1,0 +1,114 @@
+
+// Sidebar
+.sidebar {
+  position: absolute;
+  top: 81px;
+  height: calc(100% - 83px);
+  width: 250px;
+  padding: 0 20px;
+  overflow-y: scroll;
+  background-color: $wild-sand;
+  border-right: 1px solid $silver;
+
+  &.affix-top {
+    padding-top: 40px;
+  }
+
+  &.affix {
+    position: fixed;
+  }
+}
+
+.sidebar-item {
+  border-bottom: 1px solid $alto;
+  padding: 10px 0 25px;
+}
+
+// Upload button
+.upload-button {
+    position: relative;
+    overflow: hidden;
+
+}
+
+input.upload {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
+#overflow-checkbox-wrap { display: none; } // hide until the image uploader has been used
+
+.input-group {
+  max-width: 133px;
+}
+
+.checkbox {
+  input {
+    display: none;
+
+    + label {
+      padding-left: 0;
+
+      &::before {
+        padding-right: 5px;
+        font-family: 'Glyphicons Halflings';
+        content: '\e157';
+        font-size: 1.2rem;
+        vertical-align: baseline;
+      }
+
+    }
+    &:checked + label {
+      &::before {
+        content: '\e067';
+        color: $pomegranate;
+      }
+    }
+  }
+
+}
+
+.bg-position-list {
+  list-style: none;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: stretch;
+  padding-left: 0;
+  width: 134px;
+  border-left: 1px solid $silver;
+
+}
+
+.bg-position-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  label {
+    padding: 12px 14px;
+    margin-bottom: -1px;
+    background-color: $gallery;
+    border: 1px solid $silver;
+    border-left: none;
+  }
+  input {
+    display: none;
+
+    &:checked + label {
+      background-color: $pomegranate;
+      color: $white;
+    }
+  }
+}
+
+.arrow-rotate-45 {
+  transform: rotate(45deg);
+}
