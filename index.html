@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>IMG uploader</title>
+    <title>Background image thing &ndash; built by Sitback</title>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
   </head>
@@ -15,51 +15,54 @@
           <a href="tel:+61 2 9247 2223">+61 2 9247 2223</a>
           &nbsp;|&nbsp;
           <a href="https://twitter.com/sitback" target="_blank">
-            <img src="img/twitter.svg" class="img-responsive" alt="">
+            <img alt="Sitback's Twitter" src="img/twitter.svg" class="img-responsive" alt="">
           </a>
           &nbsp; |&nbsp;
           <a href="https://www.linkedin.com/company/sitback-solutions" target="_blank">
-            <img src="img/linkedin.svg" class="img-responsive" alt="">
+            <img alt="Sitback's LinkedIn" src="img/linkedin.svg" class="img-responsive" alt="">
           </a>
         </div>
       </div>
       <div class="navbar">
-        <a href="//www.sitback.com.au/" class="logo"><img src="img/logo.svg" alt=""></a>
+        <a href="//www.sitback.com.au/" class="logo"><img alt="Sitback Solutions" src="img/logo.svg" alt=""></a>
       </div>
     </div>
 
 
     <div class="flex-row">
-      <div class="sidebar" data-spy="affix" data-offset-top="40">
+      <div class="sidebar" data-spy="affix" data-offset-top="00">
         <div class="sidebar-item">
           <h4>Upload the image here:</h4>
-          <span class="upload-button btn btn-block">
+          <label class="upload-button btn btn-block">
             Upload Image&nbsp;&nbsp;
             <span class="glyphicon glyphicon-open"></span>
-            <input class="upload" type="file" id="uploaderFile">
-          </span>
+            <input class="upload" name="fileUpload" type="file" id="uploaderFile">
+          </label>
         </div>
 
         <div class="sidebar-item" id="overflow-checkbox-wrap">
           <div>
-            <h5>Toggle fill type:&nbsp;</h5>
-            <select id="toggle-bg-fill" class="form-control">
+            <h5>Toggle fill type:&nbsp;<a role="button" data-html="true" tabindex="0" data-container=".sidebar" class="btn btn-default btn-xs" data-toggle="popover" data-trigger="focus" data-placement="bottom" title="Fill type" data-content="Cover will completely fill the container with your image. Contain will show 100% of the image, with empty space around the image. <br><br>For more information <a title='MDN page for background-size' href='https://developer.mozilla.org/en-US/docs/Web/CSS/background-size#Values'>please visit the MDN page for background-size</a>">?</a></h5>
+            <select title="Toggle background fill type" id="toggle-bg-fill" class="form-control">
               <option value="cover">Cover</option>
               <option value="contain">Contain</option>
             </select>
           </div>
           <hr>
           <div>
-            <h5>Show overflow</h5>
-            <input id="overflow-checkbox" type="checkbox">
+            <span class="checkbox">
+              <input id="overflow-checkbox" type="checkbox">
+              <label for="overflow-checkbox">&nbsp;Show overflow image</label>
+              <a role="button" data-html="true" tabindex="0" data-container=".sidebar" class="btn btn-default btn-xs" data-toggle="popover" data-trigger="focus" data-placement="bottom" title="Show overflow" data-content="This will let you see exactly how much of your image is being cut off by including a <em>ghost</em> of the original image over the top of the rendered background">?</a>
+            </span>
           </div>
         </div>
 
         <div class="sidebar-item">
-          <h5>Set a section height:&nbsp;</h5>
+          <h5>Set a section height:&nbsp;<a role="button" data-html="true" tabindex="0" data-container=".sidebar" class="btn btn-default btn-xs" data-toggle="popover" data-trigger="focus" data-placement="bottom" title="Section Height" data-content="Changing the <b>section</b> height will give you a better idea of how your image will scale when used as a content background.">?</a></h5>
           <div class="form-inline">
             <div class="input-group">
-              <input id="input-height" class="form-control" type="text" placeholder="">
+              <input id="input-height" title="Set Section Height" class="form-control" type="text" placeholder="">
               <span class="input-group-addon">px</span>
             </div>
             <button id="section-height-clear" class="btn">Clear</button>
@@ -67,59 +70,59 @@
         </div>
 
         <div class="sidebar-item">
-          <h5>Set background position:</h5>
+          <h5>Set background position: <a role="button" data-html="true" tabindex="0" data-container=".sidebar" class="btn btn-default btn-xs" data-toggle="popover" data-trigger="focus" data-placement="bottom" title="Background position" data-content="Depending on the image in use, and the surrounding content, you can change the <strong>anchor point</strong> of the background image. <br><br> The default is centred both vertically and horizontally.<br><br>For more information <a title='MDN page for background-position' href='https://developer.mozilla.org/en-US/docs/Web/CSS/background-position'> please visit the MDN page for background-position</a>">?</a></h5>
           <ul class="bg-position-list">
             <li class="bg-position-item top left">
               <input name="bg-position" type="radio" id="bgTopLeft" data-alignment="top left">
-              <label for="bgTopLeft">
+              <label title="Background position is 'top left'" for="bgTopLeft">
                 <span class="glyphicon glyphicon-arrow-left arrow-rotate-45"></span>
               </label>
             </li>
             <li class="bg-position-item top center">
               <input name="bg-position" type="radio" id="bgTop" data-alignment="top">
-              <label for="bgTop">
+              <label title="Background position is 'top center'" for="bgTop">
                 <span class="glyphicon glyphicon-arrow-up"></span>
               </label>
             </li>
             <li class="bg-position-item top right">
               <input name="bg-position" name="bg-position" type="radio" id="bgTopRight" data-alignment="top right">
-              <label for="bgTopRight">
+              <label title="Background position is 'top right'" for="bgTopRight">
                 <span class="glyphicon glyphicon-arrow-up  arrow-rotate-45"></span>
               </label>
             </li>
             <li class="bg-position-item middle left">
               <input name="bg-position" type="radio" id="bgLeft" data-alignment="left">
-              <label for="bgLeft">
+              <label title="Background position is 'center left'" for="bgLeft">
                 <span class="glyphicon glyphicon-arrow-left"></span>
               </label>
             </li>
             <li class="bg-position-item middle center">
               <input name="bg-position" type="radio" id="bgCenter" checked="checked" data-alignment="center">
-              <label for="bgCenter">
+              <label title="Background position is 'center center'" for="bgCenter">
                 <span class="glyphicon glyphicon-record"></span>
               </label>
             </li>
             <li class="bg-position-item middle right">
               <input name="bg-position" type="radio" id="bgRight" data-alignment="right">
-              <label for="bgRight">
+              <label title="Background position is 'center right'" for="bgRight">
                 <span class="glyphicon glyphicon-arrow-right"></span>
               </label>
             </li>
             <li class="bg-position-item bottom left">
               <input name="bg-position" type="radio" id="bgBottomLeft" data-alignment="bottom left">
-              <label for="bgBottomLeft">
+              <label title="Background position is 'bottom left'" for="bgBottomLeft">
                 <span class="glyphicon glyphicon-arrow-down arrow-rotate-45"></span>
               </label>
             </li>
             <li class="bg-position-item bottom center">
               <input name="bg-position" type="radio" id="bgBottom" data-alignment="bottom">
-              <label for="bgBottom">
+              <label title="Background position is 'bottom center'" for="bgBottom">
                 <span class="glyphicon glyphicon-arrow-down"></span>
               </label>
             </li>
             <li class="bg-position-item bottom right">
               <input name="bg-position" type="radio" id="bgBottomRight" data-alignment="bottom right">
-              <label for="bgBottomRight">
+              <label title="Background position is 'bottom right'" for="bgBottomRight">
                 <span class="glyphicon glyphicon-arrow-right arrow-rotate-45"></span>
               </label>
             </li>
@@ -159,18 +162,16 @@
 
       <div class="content-area">
         <div class="jumbotron header">
-        <!-- <div class="jumbotron header" data-spy="affix" data-offset-top="170"> -->
-          <h1>Background image thing.</h1>
+          <h1><span class="feature-icon glyphicon glyphicon-picture"></span> Background image thing.</h1>
         </div>
 
         <div class="content">
           <div class="intro row">
-            <div class="col-lg-3">
-              <span class="feature-icon glyphicon glyphicon-picture"></span>
-            </div>
-            <div class="col-md-7 col-lg-5">
-              <p class="lead">Here's a description of what this thing does...
-              <br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis aspernatur adipisci veritatis sequi repellat iste amet asperiores ut cum animi. Fuga magnam, deserunt molestiae ratione. Corrupti fugiat, non. Consectetur, doloremque.</p>
+            <div class="col-md-8 col-lg-8">
+              <p class="lead">
+                Hate dealing with responsive background images?
+                <br>
+                This tool will allow you to preview background images that you are going to use on your website in a variety of view modes, and at a variety of resolutions. It will give you a reasonable overview of how your image will look after implementation, and give you a guide as to how to create your images to keep the most important information on screen at all times.</p>
             </div>
           </div>
 
@@ -253,7 +254,7 @@
                 <div class="flex-justify-center">
                   <div class="col-xs-4">
                     <div class="input-group">
-                      <input id="custom-device-width" class="form-control" type="text" placeholder="Width">
+                      <input id="custom-device-width" title="Custom device width" class="form-control" type="text" placeholder="Width">
                       <span class="input-group-addon">px</span>
                     </div>
                   </div>
@@ -262,7 +263,7 @@
 
                   <div class="col-xs-4">
                     <div class="input-group">
-                      <input id="custom-device-height" class="form-control" type="text" placeholder="Height">
+                      <input id="custom-device-height" title="Custom device height" class="form-control" type="text" placeholder="Height">
                       <span class="input-group-addon">px</span>
                     </div>
                   </div>
@@ -284,33 +285,26 @@
 
         <!-- Footer -->
         <div class="footer">
-          <div class="best-plack-to-work">
+<!--           <div class="best-plack-to-work">
             <img src="img/bptw_slim.png" alt="" />
+          </div> -->
+          <div class="copyright">
+            built by <a href="http://www.sitback.com.au" target="_blank">Sitback</a> /
+            <span class="sbw-abn"><abbr title="Australian Business Number">ABN</abbr> 67 118 118 737</span>
+          </div>
+          <div class="address">
+              39-41 Lower Fort Street
+              <br> Sydney NSW 2000, Australia
           </div>
 
           <div class="contact">
-            <div class="address">
-              <p>
-                39-41 Lower Fort Street
-                <br> Sydney NSW 2000
-                <br> Australia
-              </p>
-            </div>
-            <p>
               <img src="img/phone.svg" alt="Call us" class="icon"><a href="tel:+61 2 9247 2223">+61 2 9247 2223</a>
               <br>
               <img src="img/envelope.svg" alt="Email us" class="icon"><a href="mailto:hello@sitback.com.au">hello@sitback.com.au</a>
-            </p>
           </div>
-          <p class="copyright">
-            &copy; Sitback /
-            <span class="sbw-abn">ABN 67 118 118 737</span>
-          </p>
         </div>
       </div>
     </div>
-
-
 
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>

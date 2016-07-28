@@ -129,4 +129,6 @@ $(document).ready(function(){
     $(inputCustomWidth).val('');
     $(inputCustomHeight).val('');
   });
+
+  $('[data-toggle="popover"]').popover();
 });

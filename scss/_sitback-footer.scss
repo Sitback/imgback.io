@@ -4,31 +4,38 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
-  min-height: 173px;
-  padding: 20px 30px 30px;
-  background-color: $mine-shaft;
+  align-items: flex-end;
+  padding: 10px 30px;
+  background-color: $black;
   color: $white;
   font-size: 16px;
   line-height: 1.8em;
-}
 
-.copyright {
-  flex: 2 2 100%;
-  margin-top: 50px;
-  border-bottom: 1px solid $tundora;
-  font-weight: 300;
-}
-
-.contact {
-  margin-top: 40px;
-
-  img {
-    height: 16px;
-    padding-right: 10px;
+  & > div {
+    align-self: bottom;
   }
 
   a {
     color: $pomegranate;
+  }
+}
+
+.address {
+  order: 1;
+}
+
+.copyright {
+  margin-top: 20px;
+  font-weight: 300;
+  order: 2
+}
+
+.contact {
+  margin-top: 20px;
+  order: 3;
+
+  img {
+    height: 16px;
+    padding-right: 10px;
   }
 }
