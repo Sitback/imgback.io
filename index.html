@@ -32,12 +32,21 @@
     <div class="flex-row">
       <div class="sidebar" data-spy="affix" data-offset-top="00">
         <div class="sidebar-item">
-          <h4>Upload the image here:</h4>
+          <h4>Choose your image:</h4>
           <label class="upload-button btn btn-block">
             Upload Image&nbsp;&nbsp;
             <span class="glyphicon glyphicon-open"></span>
             <input class="upload" name="fileUpload" type="file" id="uploaderFile">
           </label>
+          <span class="block center strong margin-top_1 margin-bottom_1">or</span>
+          <a class="btn btn-block btn-sm" href="#" id="getUnsplashImage">
+            Use one of ours&nbsp;&nbsp;
+            <span class="glyphicon glyphicon-save"></span>
+          </a>
+          <div id="unsplashAttribution" class="margin-top_1">
+            Photo by <a id="photographerLink" target="unsplash"></a>.<br>
+            <a id="photoLink" target="unsplash">Direct link to image</a>.
+          </div>
         </div>
 
         <div class="sidebar-item" id="overflow-checkbox-wrap">
@@ -133,11 +142,11 @@
           <h5>Choose devices:&nbsp;</h5>
           <ul class="list-unstyled" id="device-list">
             <li class="checkbox">
-              <input type="checkbox" id="checkbox-iphone" checked="checked">
+              <input type="checkbox" id="checkbox-iphone">
               <label for="checkbox-iphone">&nbsp;iPhone 6</label>
             </li>
             <li class="checkbox">
-              <input type="checkbox" id="checkbox-s7" checked="checked">
+              <input type="checkbox" id="checkbox-s7">
               <label for="checkbox-s7">&nbsp;Samsung Galaxy S7</label>
             </li>
             <li class="checkbox">
@@ -145,7 +154,7 @@
               <label for="checkbox-ipad">&nbsp;iPad</label>
             </li>
             <li class="checkbox">
-              <input type="checkbox" id="checkbox-small-desktop" checked="checked">
+              <input type="checkbox" id="checkbox-small-desktop">
               <label for="checkbox-small-desktop">&nbsp;Small Desktop</label>
             </li>
             <li class="checkbox">
@@ -153,11 +162,19 @@
               <label for="checkbox-hdtv">&nbsp;HDTV</label>
             </li>
             <li class="checkbox">
-              <input type="checkbox" id="checkbox-custom" checked="checked">
+              <input type="checkbox" id="checkbox-custom">
               <label for="checkbox-custom">&nbsp;Custom</label>
             </li>
           </ul>
         </div>
+
+        <div class="sidebar-item">
+          <h5>Image history:&nbsp;<a role="button" data-html="true" tabindex="0" data-container=".sidebar" class="btn btn-default btn-xs" data-toggle="popover" data-trigger="focus" data-placement="bottom" title="Section Height" data-content="Show the images you've previously looked at in this browser session.<br><br> <strong>Note:</strong> history is not saved across sessions.">?</a></h5>
+          <a class="btn btn-block btn-sm" href="#" id="getImageHistory" disabled title="You don't have a preview history yet.">
+            View preview history&nbsp;&nbsp;
+            <span class="glyphicon glyphicon-eye-open"></span>
+          </a>
+        </div>        
       </div>
 
       <div class="content-area">
@@ -282,6 +299,13 @@
 
         </div>
 
+        <div id="imageHistory" class="image_history ninactive">
+          <div class="history_inner">
+            <div class="history_close">
+              <a id="closeHistory" title="Hide the image history" class="glyphicon glyphicon-menu-down"></a>
+            </div>
+          </div>
+        </div>
 
         <!-- Footer -->
         <div class="footer">

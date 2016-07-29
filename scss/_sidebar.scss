@@ -28,7 +28,6 @@
 .upload-button {
     position: relative;
     overflow: hidden;
-
 }
 
 input.upload {
@@ -111,4 +110,8 @@ input.upload {
 
 .arrow-rotate-45 {
   transform: rotate(45deg);
+}
+
+#unsplashAttribution {
+  display: none;
 }

@@ -68,6 +68,21 @@ hr.thick {
 h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
   color: #767676; }
 
+.block {
+  display: block; }
+
+.center {
+  text-align: center; }
+
+.strong {
+  font-weight: bold; }
+
+.margin-top_1 {
+  margin-top: 1em; }
+
+.margin-bottom_1 {
+  margin-bottom: 1em; }
+
 .sitback-header {
   position: fixed;
   width: 100%;
@@ -229,6 +244,62 @@ input.upload {
 
 .arrow-rotate-45 {
   transform: rotate(45deg); }
+
+#unsplashAttribution {
+  display: none; }
+
+#imageHistory {
+  min-height: 100px;
+  max-height: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.75);
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  padding: 0.5em;
+  transition: all 1s; }
+  #imageHistory.inactive {
+    bottom: -100px; }
+  #imageHistory .history_inner {
+    width: 100%;
+    max-width: 100%;
+    overflow-y: hidden;
+    overflow-x: auto;
+    height: 100px;
+    position: relative;
+    white-space: nowrap; }
+    #imageHistory .history_inner .history_image {
+      width: 100px;
+      max-width: 100px;
+      display: inline-block;
+      margin: 0 0.5em;
+      overflow: hidden;
+      position: relative;
+      height: calc(100px - 0.5em);
+      max-height: calc(100px - 0.5em); }
+      #imageHistory .history_inner .history_image a {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: 50%;
+        display: block;
+        height: calc(100px - 0.5em);
+        max-height: calc(100px - 0.5em);
+        width: 100%;
+        max-width: 100%;
+        cursor: pointer; }
+    #imageHistory .history_inner .history_close {
+      position: fixed;
+      margin-top: 0;
+      display: inline-block;
+      z-index: 10; }
+      #imageHistory .history_inner .history_close a {
+        color: #dd370a;
+        cursor: pointer;
+        font-size: 2em; }
 
 .device-wrapper {
   display: none;
