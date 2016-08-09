@@ -60,6 +60,7 @@ $(document).ready(function(){
   // Section height set.
   $(inputHeight).on('change', function() {
     var newHeight = $(inputHeight).val();
+    ga('send', 'event', 'sectionHeight', 'changed', newHeight + 'px');
     $(deviceBackground).css('height', newHeight + 'px');
   });
   $(sectionHeightClear).on('click', function () {
@@ -71,6 +72,7 @@ $(document).ready(function(){
   // Set background position
   $(inputBackgroundPosition).on('click', function() {
     var bgPosition = $(this).data('alignment');
+    ga('send', 'event', 'bgPosition', 'on', bgPosition);
     $(deviceBackground).removeClass('top center bottom left right');
     $(deviceBackground).toggleClass(bgPosition);
   });
@@ -88,24 +90,52 @@ $(document).ready(function(){
 
   // Choose device
   function showDevice(e) {
-    if($(this).prop('checked') == true) {
+    var $this = $(this);
+    if($this.prop('checked') == true) {
+      ga('send', 'event', 'devices', 'on', $this.data('device'));
       $(e.data.device).css({
         'display': 'block'
       });
     } else {
+      ga('send', 'event', 'devices', 'off', $this.data('device'));
       $(e.data.device).css({
         'display': 'none'
       });
     }
   };
 
-  $('#checkbox-' + deviceIphone).on('click init', {device: '#' + deviceIphone}, showDevice).trigger('init');
-  $('#checkbox-' + deviceS7).on('click init', {device: '#' + deviceS7}, showDevice).trigger('init');
-  $('#checkbox-' + deviceIpad).on('click init', {device: '#' + deviceIpad}, showDevice).trigger('init');
-  $('#checkbox-' + deviceSmallDesktop).on('click init', {device: '#' + deviceSmallDesktop}, showDevice).trigger('init');
-  $('#checkbox-' + deviceHdtv).on('click init', {device: '#' + deviceHdtv}, showDevice).trigger('init');
-  $('#checkbox-' + deviceCustom).on('click init', {device: '#' + deviceCustom}, showDevice).trigger('init');
+  function triggerDevice(e) {
+    var target = $(e.target);
+    var dev = target.data('device');
+    var device = $('#checkbox-' + dev);
+    device.trigger('click');
+    if (!!device.prop('checked')) {
+      target.removeClass('btn-default').addClass('btn-primary');
+    } else {
+      target.addClass('btn-default').removeClass('btn-primary');
+    }
+  }
 
+  $('.start-button').on('click', triggerDevice);
+
+  $('#checkbox-' + deviceIphone)
+    .on('click init', {device: '#' + deviceIphone}, showDevice)
+    .trigger('init');
+  $('#checkbox-' + deviceS7)
+    .on('click init', {device: '#' + deviceS7}, showDevice)
+    .trigger('init');
+  $('#checkbox-' + deviceIpad)
+    .on('click init', {device: '#' + deviceIpad}, showDevice)
+    .trigger('init');
+  $('#checkbox-' + deviceSmallDesktop)
+    .on('click init', {device: '#' + deviceSmallDesktop}, showDevice)
+    .trigger('init');
+  $('#checkbox-' + deviceHdtv)
+    .on('click init', {device: '#' + deviceHdtv}, showDevice)
+    .trigger('init');
+  $('#checkbox-' + deviceCustom)
+    .on('click init', {device: '#' + deviceCustom}, showDevice)
+    .trigger('init');
 
   // Rotate Device
   $(deviceRotate).on('click', function () {
