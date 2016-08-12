@@ -3,6 +3,14 @@
   <head>
     <meta charset="utf-8">
     <title>Background image thing &ndash; built by Sitback</title>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-1735300-5', 'auto');
+      ga('send', 'pageview');
+    </script>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
   </head>
@@ -24,157 +32,38 @@
         </div>
       </div>
       <div class="navbar">
-        <a href="//www.sitback.com.au/" class="logo"><img alt="Sitback Solutions" src="img/logo.svg" alt=""></a>
+        <h1>Image background previewer</h1><span class="by">by</span><a href="//www.sitback.com.au/" class="logo"><img alt="Sitback Solutions" src="img/logo.svg" alt=""></a>
       </div>
     </div>
 
 
     <div class="flex-row">
-      <div class="sidebar" data-spy="affix" data-offset-top="00">
-        <div class="sidebar-item">
-          <h4>Upload the image here:</h4>
-          <label class="upload-button btn btn-block">
-            Upload Image&nbsp;&nbsp;
-            <span class="glyphicon glyphicon-open"></span>
-            <input class="upload" name="fileUpload" type="file" id="uploaderFile">
-          </label>
-        </div>
-
-        <div class="sidebar-item" id="overflow-checkbox-wrap">
-          <div>
-            <h5>Toggle fill type:&nbsp;<a role="button" data-html="true" tabindex="0" data-container=".sidebar" class="btn btn-default btn-xs" data-toggle="popover" data-trigger="focus" data-placement="bottom" title="Fill type" data-content="Cover will completely fill the container with your image. Contain will show 100% of the image, with empty space around the image. <br><br>For more information <a title='MDN page for background-size' href='https://developer.mozilla.org/en-US/docs/Web/CSS/background-size#Values'>please visit the MDN page for background-size</a>">?</a></h5>
-            <select title="Toggle background fill type" id="toggle-bg-fill" class="form-control">
-              <option value="cover">Cover</option>
-              <option value="contain">Contain</option>
-            </select>
-          </div>
-          <hr>
-          <div>
-            <span class="checkbox">
-              <input id="overflow-checkbox" type="checkbox">
-              <label for="overflow-checkbox">&nbsp;Show overflow image</label>
-              <a role="button" data-html="true" tabindex="0" data-container=".sidebar" class="btn btn-default btn-xs" data-toggle="popover" data-trigger="focus" data-placement="bottom" title="Show overflow" data-content="This will let you see exactly how much of your image is being cut off by including a <em>ghost</em> of the original image over the top of the rendered background">?</a>
-            </span>
-          </div>
-        </div>
-
-        <div class="sidebar-item">
-          <h5>Set a section height:&nbsp;<a role="button" data-html="true" tabindex="0" data-container=".sidebar" class="btn btn-default btn-xs" data-toggle="popover" data-trigger="focus" data-placement="bottom" title="Section Height" data-content="Changing the <b>section</b> height will give you a better idea of how your image will scale when used as a content background.">?</a></h5>
-          <div class="form-inline">
-            <div class="input-group">
-              <input id="input-height" title="Set Section Height" class="form-control" type="text" placeholder="">
-              <span class="input-group-addon">px</span>
-            </div>
-            <button id="section-height-clear" class="btn">Clear</button>
-          </div>
-        </div>
-
-        <div class="sidebar-item">
-          <h5>Set background position: <a role="button" data-html="true" tabindex="0" data-container=".sidebar" class="btn btn-default btn-xs" data-toggle="popover" data-trigger="focus" data-placement="bottom" title="Background position" data-content="Depending on the image in use, and the surrounding content, you can change the <strong>anchor point</strong> of the background image. <br><br> The default is centred both vertically and horizontally.<br><br>For more information <a title='MDN page for background-position' href='https://developer.mozilla.org/en-US/docs/Web/CSS/background-position'> please visit the MDN page for background-position</a>">?</a></h5>
-          <ul class="bg-position-list">
-            <li class="bg-position-item top left">
-              <input name="bg-position" type="radio" id="bgTopLeft" data-alignment="top left">
-              <label title="Background position is 'top left'" for="bgTopLeft">
-                <span class="glyphicon glyphicon-arrow-left arrow-rotate-45"></span>
-              </label>
-            </li>
-            <li class="bg-position-item top center">
-              <input name="bg-position" type="radio" id="bgTop" data-alignment="top">
-              <label title="Background position is 'top center'" for="bgTop">
-                <span class="glyphicon glyphicon-arrow-up"></span>
-              </label>
-            </li>
-            <li class="bg-position-item top right">
-              <input name="bg-position" name="bg-position" type="radio" id="bgTopRight" data-alignment="top right">
-              <label title="Background position is 'top right'" for="bgTopRight">
-                <span class="glyphicon glyphicon-arrow-up  arrow-rotate-45"></span>
-              </label>
-            </li>
-            <li class="bg-position-item middle left">
-              <input name="bg-position" type="radio" id="bgLeft" data-alignment="left">
-              <label title="Background position is 'center left'" for="bgLeft">
-                <span class="glyphicon glyphicon-arrow-left"></span>
-              </label>
-            </li>
-            <li class="bg-position-item middle center">
-              <input name="bg-position" type="radio" id="bgCenter" checked="checked" data-alignment="center">
-              <label title="Background position is 'center center'" for="bgCenter">
-                <span class="glyphicon glyphicon-record"></span>
-              </label>
-            </li>
-            <li class="bg-position-item middle right">
-              <input name="bg-position" type="radio" id="bgRight" data-alignment="right">
-              <label title="Background position is 'center right'" for="bgRight">
-                <span class="glyphicon glyphicon-arrow-right"></span>
-              </label>
-            </li>
-            <li class="bg-position-item bottom left">
-              <input name="bg-position" type="radio" id="bgBottomLeft" data-alignment="bottom left">
-              <label title="Background position is 'bottom left'" for="bgBottomLeft">
-                <span class="glyphicon glyphicon-arrow-down arrow-rotate-45"></span>
-              </label>
-            </li>
-            <li class="bg-position-item bottom center">
-              <input name="bg-position" type="radio" id="bgBottom" data-alignment="bottom">
-              <label title="Background position is 'bottom center'" for="bgBottom">
-                <span class="glyphicon glyphicon-arrow-down"></span>
-              </label>
-            </li>
-            <li class="bg-position-item bottom right">
-              <input name="bg-position" type="radio" id="bgBottomRight" data-alignment="bottom right">
-              <label title="Background position is 'bottom right'" for="bgBottomRight">
-                <span class="glyphicon glyphicon-arrow-right arrow-rotate-45"></span>
-              </label>
-            </li>
-          </ul>
-        </div>
-
-        <div class="sidebar-item">
-          <h5>Choose devices:&nbsp;</h5>
-          <ul class="list-unstyled" id="device-list">
-            <li class="checkbox">
-              <input type="checkbox" id="checkbox-iphone" checked="checked">
-              <label for="checkbox-iphone">&nbsp;iPhone 6</label>
-            </li>
-            <li class="checkbox">
-              <input type="checkbox" id="checkbox-s7" checked="checked">
-              <label for="checkbox-s7">&nbsp;Samsung Galaxy S7</label>
-            </li>
-            <li class="checkbox">
-              <input type="checkbox" id="checkbox-ipad">
-              <label for="checkbox-ipad">&nbsp;iPad</label>
-            </li>
-            <li class="checkbox">
-              <input type="checkbox" id="checkbox-small-desktop" checked="checked">
-              <label for="checkbox-small-desktop">&nbsp;Small Desktop</label>
-            </li>
-            <li class="checkbox">
-              <input type="checkbox" id="checkbox-hdtv">
-              <label for="checkbox-hdtv">&nbsp;HDTV</label>
-            </li>
-            <li class="checkbox">
-              <input type="checkbox" id="checkbox-custom" checked="checked">
-              <label for="checkbox-custom">&nbsp;Custom</label>
-            </li>
-          </ul>
-        </div>
-      </div>
-
       <div class="content-area">
-        <div class="jumbotron header">
-          <h1><span class="feature-icon glyphicon glyphicon-picture"></span> Background image thing.</h1>
+<!--         <div class="jumbotron header">
+          <h1><span class="feature-icon glyphicon glyphicon-phone"></span> Image Background Previewer.</h1>
         </div>
-
+ -->
         <div class="content">
           <div class="intro row">
-            <div class="col-md-8 col-lg-8">
+            <div class="col-md-7 col-lg-7">
               <p class="lead">
-                Hate dealing with responsive background images?
+                Hate dealing with background images?
                 <br>
                 This tool will allow you to preview background images that you are going to use on your website in a variety of view modes, and at a variety of resolutions. It will give you a reasonable overview of how your image will look after implementation, and give you a guide as to how to create your images to keep the most important information on screen at all times.</p>
             </div>
+            <div class="start-box col-md-5 col-lg-5">
+              <h2>Start here</h2>
+              <p>Select some devices and get started!</p>
+              <div class="start-button-wrapper">
+                <a class="start-button btn btn-default" data-device="iphone" title="Show iPhone 6">iPhone 6</a>
+                <a class="start-button btn btn-default" data-device="s7" title="Show Samsung Galaxy S7">Galaxy S7</a>
+                <a class="start-button btn btn-default" data-device="ipad" title="Show iPad">iPad</a>
+                <a class="start-button btn btn-default" data-device="small-desktop" title="Show Small Desktop">Desktop</a>
+                <a class="start-button btn btn-default" data-device="hdtv" title="Show HDTV">HDTV</a>
+                <a class="start-button btn btn-default" data-device="custom" title="Show Custom">Custom</a>
+              </div>
+            </div>
           </div>
-
           <hr class="thick">
 
           <h2>Devices:</h2>
@@ -302,6 +191,136 @@
               <br>
               <img src="img/envelope.svg" alt="Email us" class="icon"><a href="mailto:hello@sitback.com.au">hello@sitback.com.au</a>
           </div>
+        </div>
+      </div>
+
+      <div class="sidebar" data-spy="affix" data-offset-top="00">
+        <div class="sidebar-item">
+          <h4>Upload the image here:</h4>
+          <label class="upload-button btn btn-block">
+            Upload Image&nbsp;&nbsp;
+            <span class="glyphicon glyphicon-open"></span>
+            <input class="upload" name="fileUpload" type="file" id="uploaderFile">
+          </label>
+        </div>
+
+        <div class="sidebar-item" id="overflow-checkbox-wrap">
+          <div>
+            <h5>Toggle fill type:&nbsp;<a role="button" data-html="true" tabindex="0" data-container=".sidebar" class="btn btn-default btn-xs" data-toggle="popover" data-trigger="focus" data-placement="bottom" title="Fill type" data-content="Cover will completely fill the container with your image. Contain will show 100% of the image, with empty space around the image. <br><br>For more information <a title='MDN page for background-size' href='https://developer.mozilla.org/en-US/docs/Web/CSS/background-size#Values'>please visit the MDN page for background-size</a>">?</a></h5>
+            <select title="Toggle background fill type" id="toggle-bg-fill" class="form-control">
+              <option value="cover">Cover</option>
+              <option value="contain">Contain</option>
+            </select>
+          </div>
+          <hr>
+          <div>
+            <span class="checkbox">
+              <input id="overflow-checkbox" type="checkbox">
+              <label for="overflow-checkbox">&nbsp;Show overflow image</label>
+              <a role="button" data-html="true" tabindex="0" data-container=".sidebar" class="btn btn-default btn-xs" data-toggle="popover" data-trigger="focus" data-placement="bottom" title="Show overflow" data-content="This will let you see exactly how much of your image is being cut off by including a <em>ghost</em> of the original image over the top of the rendered background">?</a>
+            </span>
+          </div>
+        </div>
+
+        <div class="sidebar-item">
+          <h5>Set a section height:&nbsp;<a role="button" data-html="true" tabindex="0" data-container=".sidebar" class="btn btn-default btn-xs" data-toggle="popover" data-trigger="focus" data-placement="bottom" title="Section Height" data-content="Changing the <b>section</b> height will give you a better idea of how your image will scale when used as a content background.">?</a></h5>
+          <div class="form-inline">
+            <div class="input-group">
+              <input id="input-height" title="Set Section Height" class="form-control" type="text" placeholder="">
+              <span class="input-group-addon">px</span>
+            </div>
+            <button id="section-height-clear" class="btn">Clear</button>
+          </div>
+        </div>
+
+        <div class="sidebar-item">
+          <h5>Set background position: <a role="button" data-html="true" tabindex="0" data-container=".sidebar" class="btn btn-default btn-xs" data-toggle="popover" data-trigger="focus" data-placement="bottom" title="Background position" data-content="Depending on the image in use, and the surrounding content, you can change the <strong>anchor point</strong> of the background image. <br><br> The default is centred both vertically and horizontally.<br><br>For more information <a title='MDN page for background-position' href='https://developer.mozilla.org/en-US/docs/Web/CSS/background-position'> please visit the MDN page for background-position</a>">?</a></h5>
+          <ul class="bg-position-list">
+            <li class="bg-position-item top left">
+              <input name="bg-position" type="radio" id="bgTopLeft" data-alignment="top left">
+              <label title="Background position is 'top left'" for="bgTopLeft">
+                <span class="glyphicon glyphicon-arrow-left arrow-rotate-45"></span>
+              </label>
+            </li>
+            <li class="bg-position-item top center">
+              <input name="bg-position" type="radio" id="bgTop" data-alignment="top">
+              <label title="Background position is 'top center'" for="bgTop">
+                <span class="glyphicon glyphicon-arrow-up"></span>
+              </label>
+            </li>
+            <li class="bg-position-item top right">
+              <input name="bg-position" name="bg-position" type="radio" id="bgTopRight" data-alignment="top right">
+              <label title="Background position is 'top right'" for="bgTopRight">
+                <span class="glyphicon glyphicon-arrow-up  arrow-rotate-45"></span>
+              </label>
+            </li>
+            <li class="bg-position-item middle left">
+              <input name="bg-position" type="radio" id="bgLeft" data-alignment="left">
+              <label title="Background position is 'center left'" for="bgLeft">
+                <span class="glyphicon glyphicon-arrow-left"></span>
+              </label>
+            </li>
+            <li class="bg-position-item middle center">
+              <input name="bg-position" type="radio" id="bgCenter" checked="checked" data-alignment="center">
+              <label title="Background position is 'center center'" for="bgCenter">
+                <span class="glyphicon glyphicon-record"></span>
+              </label>
+            </li>
+            <li class="bg-position-item middle right">
+              <input name="bg-position" type="radio" id="bgRight" data-alignment="right">
+              <label title="Background position is 'center right'" for="bgRight">
+                <span class="glyphicon glyphicon-arrow-right"></span>
+              </label>
+            </li>
+            <li class="bg-position-item bottom left">
+              <input name="bg-position" type="radio" id="bgBottomLeft" data-alignment="bottom left">
+              <label title="Background position is 'bottom left'" for="bgBottomLeft">
+                <span class="glyphicon glyphicon-arrow-down arrow-rotate-45"></span>
+              </label>
+            </li>
+            <li class="bg-position-item bottom center">
+              <input name="bg-position" type="radio" id="bgBottom" data-alignment="bottom">
+              <label title="Background position is 'bottom center'" for="bgBottom">
+                <span class="glyphicon glyphicon-arrow-down"></span>
+              </label>
+            </li>
+            <li class="bg-position-item bottom right">
+              <input name="bg-position" type="radio" id="bgBottomRight" data-alignment="bottom right">
+              <label title="Background position is 'bottom right'" for="bgBottomRight">
+                <span class="glyphicon glyphicon-arrow-right arrow-rotate-45"></span>
+              </label>
+            </li>
+          </ul>
+        </div>
+
+        <div class="sidebar-item">
+          <h5>Choose devices:&nbsp;</h5>
+          <ul class="list-unstyled" id="device-list">
+            <li class="checkbox">
+              <input type="checkbox" id="checkbox-iphone" data-device="iPhone">
+              <label for="checkbox-iphone">&nbsp;iPhone 6</label>
+            </li>
+            <li class="checkbox">
+              <input type="checkbox" id="checkbox-s7" data-device="Galaxy S7">
+              <label for="checkbox-s7">&nbsp;Samsung Galaxy S7</label>
+            </li>
+            <li class="checkbox">
+              <input type="checkbox" id="checkbox-ipad" data-device="iPad">
+              <label for="checkbox-ipad">&nbsp;iPad</label>
+            </li>
+            <li class="checkbox">
+              <input type="checkbox" id="checkbox-small-desktop" data-device="Small Desktop">
+              <label for="checkbox-small-desktop">&nbsp;Small Desktop</label>
+            </li>
+            <li class="checkbox">
+              <input type="checkbox" id="checkbox-hdtv" data-device="HDTV">
+              <label for="checkbox-hdtv">&nbsp;HDTV</label>
+            </li>
+            <li class="checkbox">
+              <input type="checkbox" id="checkbox-custom" data-device="Custom">
+              <label for="checkbox-custom">&nbsp;Custom</label>
+            </li>
+          </ul>
         </div>
       </div>
     </div>

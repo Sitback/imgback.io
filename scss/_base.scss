@@ -84,13 +84,14 @@ label {
   h1 {
     margin-top: 0;
     font-size: 3vw;
+    line-height: 1;
     transition: .2s all ease;
   }
 }
 
 .intro {
   display: flex;
-  align-items: center;
+  align-items: stretch;
 
   .lead {
 
@@ -99,12 +100,26 @@ label {
       line-height: 2;
     }
   }
+
+  .start-box {
+    background-color: $gallery;
+
+    .start-button-wrapper {
+      text-align: center;
+    }
+
+    .btn {
+      margin-bottom: 0.5em;
+      cursor: pointer;
+    }
+  }
 }
 
 .feature-icon {
   font-size: 4vw;
   text-align: center;
   color: $silver;
+  vertical-align: text-top;
 }
 
 hr {
