@@ -15,6 +15,10 @@ $black:           #040404;
 $trinidad:        #dd370a;
 $pomegranate:     $trinidad;
 
+$alizarin-crimson:     rgb(214, 37, 47);     //#D6252F;
+$firefly:              rgb(13, 45, 56);      //#0D2D38;
+
+
 // Bootstrap Overrides
 body {
   position: relative;
@@ -25,8 +29,8 @@ label {
 }
 
 .btn {
-  background-color: $pomegranate;
-  border-color: $pomegranate;
+  background-color: $alizarin-crimson;
+  border-color: $alizarin-crimson;
   text-transform: uppercase;
   font-weight: normal;
   color: $white;
@@ -35,8 +39,8 @@ label {
   &:focus,
   &:active,
   &:focus:active, {
-    background-color: darken($pomegranate, 10);
-    border-color: darken($pomegranate, 10);
+    background-color: darken($alizarin-crimson, 10);
+    border-color: darken($alizarin-crimson, 10);
     color: $white;
   }
 
