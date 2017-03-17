@@ -69,7 +69,7 @@ input.upload {
     &:checked + label {
       &::before {
         content: '\e067';
-        color: $pomegranate;
+        color: $alizarin-crimson;
       }
     }
   }
@@ -103,7 +103,7 @@ input.upload {
     display: none;
 
     &:checked + label {
-      background-color: $pomegranate;
+      background-color: $alizarin-crimson;
       color: $white;
     }
   }
