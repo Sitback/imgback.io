@@ -1,0 +1,13 @@
+.content-area-wrap {
+  // padding-top: 98px;
+
+  @media print {
+    padding-top: 0;
+  }
+}
+
+.page-content {
+  flex: 2;
+  padding: 20px;
+  height: 100%;
+}

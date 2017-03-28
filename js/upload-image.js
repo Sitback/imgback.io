@@ -4,8 +4,7 @@ $(document).ready(function(){
       readImage = new FileReader(),
       inputHeight = '#input-height',
       sectionHeightClear = '#section-height-clear',
-      toggleBackgroundFillType = '#toggle-bg-fill-type',
-      toggleBackgroundFill = '#toggle-bg-fill',
+      toggleBackgroundFill = '[name="background-type"]',
       inputBackgroundPosition = 'input[name=bg-position]',
       deviceIphone = 'iphone',
       deviceS7 = 's7',
@@ -21,7 +20,8 @@ $(document).ready(function(){
       inputCustomHeight = '#custom-device-height',
       customHeightClear = '#device-custom-clear',
       customWidth = '.custom, .custom .device-screen',
-      customHeight = '.custom, .custom .image-background';
+      customHeight = '.custom, .custom .image-background',
+      helpIcon = '.icon.help';
 
 
   // Show uploaded image as section background on each device.
@@ -37,16 +37,20 @@ $(document).ready(function(){
     }
   });
 
+  $(helpIcon).on('click', function() {
+    var $this = $(this);
+    $this.toggleClass('active');
+    $this.parents('.sidebar-item').find('.panel.help').toggleClass('active');
+  });
 
   // Toggle Background fill type
-  $(toggleBackgroundFill).change(function() {
+  $(toggleBackgroundFill).click(function() {
     if ($(this).val() === 'contain') {
       $(deviceBackground).css({
         'background-size': 'contain',
         'max-width': '100%'
       });
-    }
-    else {
+    } else {
       $(deviceBackground).css('background-size', 'cover');
       $(deviceOverflow).css({
         'background-size': "auto 100%",

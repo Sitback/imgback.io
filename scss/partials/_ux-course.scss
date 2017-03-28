@@ -1,0 +1,86 @@
+//
+// UX course item
+// --------------------------------------------------
+
+.course-item {
+  display: flex;
+  margin-top: 20px;
+  flex-flow: row wrap;
+
+  @media (min-width: $screen-sm) {
+    margin-top: 40px;
+  }
+
+  .course-icon {
+    // @extend .col-sm-1;
+    flex: 100%;
+
+    @media (min-width: $screen-sm) {
+      flex: 1;
+      padding-right: 15px;
+    }
+
+    img {
+      max-width: 90px;
+    }
+  }
+
+  .course-content {
+    // @extend .col-sm-6;
+    // @extend .col-md-8;
+    flex: 100%;
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+
+    @media (min-width: $screen-sm) {
+      flex: 5;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .course-feature {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    margin-right: 10px;
+    min-height: 100px;
+    border: 1px solid $silver;
+    text-align: center;
+
+    @media (min-width: $screen-sm) {
+      margin-top: 0;
+    }
+
+    &.cta {
+      margin-right: 10px;
+      transition: .2s background ease-in-out;
+
+      .over {
+        display: none;
+      }
+
+      &:hover {
+        background-color: $primary;
+
+        a {
+          color: $white;
+          text-decoration: none;
+        }
+
+        .over {
+          display: flex;
+        }
+
+        .price {
+          display: none;
+        }
+      }
+    }
+  }
+}

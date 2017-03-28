@@ -1,0 +1,46 @@
+//
+// Modals
+// --------------------------------------------------
+
+.ember-modal {
+  position: absolute;
+  top: 5%;
+  overflow-y: scroll;
+  max-height: 85vh;
+  background-color: $concrete;
+  border-radius: 0;
+  border: 1px solid $dove-gray;
+
+}
+
+.modal-title {
+  padding-right: 40px;
+}
+
+.ember-modal-close-button {
+  color: $secondary;
+  font-size: 40px;
+  line-height: 1;
+  font-family: arial, sans-serif;
+  padding: 15px 17px;
+
+  &::after {
+    display: block;
+    content: '\00d7';
+  }
+
+  span {
+    &:not(.ember-modal-close-button-text) {
+      display: none;
+    }
+  }
+}
+
+.ember-modal-overlay,
+.ember-modal {
+  @media (max-width: $screen-sm) {
+    position: absolute;
+    height: auto;
+    top: 0;
+  }
+}

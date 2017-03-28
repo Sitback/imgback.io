@@ -1,0 +1,19 @@
+{
+  "name": "ux-workshop-toolkit",
+  "dependencies": {
+    "ember": "~2.7.0",
+    "ember-cli-shims": "0.1.1",
+    "ember-qunit-notifications": "0.1.0",
+    "pretender": "~1.1.0",
+    "Faker": "~3.1.0",
+    "bootstrap-sass": "^3.3.7",
+    "jquery-ui": "^1.12.1",
+    "font-awesome": "^4.6.3",
+    "animatewithsass": "^3.2.2",
+    "raven-js": "~3.3"
+  },
+  "devDependencies": {
+    "flexboxgrid-sass": "^8.0.5",
+    "normalize-css": "^6.0.0"
+  }
+}

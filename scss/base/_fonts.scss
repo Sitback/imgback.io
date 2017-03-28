@@ -1,0 +1,195 @@
+//
+// Fonts
+// --------------------------------------------------
+
+// Font: MetroNova
+// --------------------------------------------------
+
+// @import must be at top of file, otherwise CSS will not work
+//@import url('//hello.myfonts.net/count/32416f');
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+
+@font-face {
+  font-family: 'Metro Nova Pro';
+  src: url('assets/fonts/metro-nova/32416F_2_0.eot');
+  src: url('fonts/metro-nova/32416F_2_0.eot?#iefix') format('embedded-opentype'),
+       url('fonts/metro-nova/32416F_2_0.woff2') format('woff2'),
+       url('fonts/metro-nova/32416F_2_0.woff') format('woff'),
+       url('fonts/metro-nova/32416F_2_0.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-feature-settings: 'ss09';
+}
+
+@font-face {
+  font-family: 'Metro Nova Pro';
+  src: url('fonts/metro-nova/32416F_1_0.eot');
+  src: url('fonts/metro-nova/32416F_1_0.eot?#iefix') format('embedded-opentype'),
+       url('fonts/metro-nova/32416F_1_0.woff2') format('woff2'),
+       url('fonts/metro-nova/32416F_1_0.woff') format('woff'),
+       url('fonts/metro-nova/32416F_1_0.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-feature-settings: 'ss09';
+}
+
+@font-face {
+  font-family: 'Metro Nova Pro';
+  src: url('fonts/metro-nova/32416F_3_0.eot');
+  src: url('fonts/metro-nova/32416F_3_0.eot?#iefix') format('embedded-opentype'),
+       url('fonts/metro-nova/32416F_3_0.woff2') format('woff2'),
+       url('fonts/metro-nova/32416F_3_0.woff') format('woff'),
+       url('fonts/metro-nova/32416F_3_0.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-feature-settings: 'ss09';
+}
+
+@font-face {
+  font-family: 'Metro Nova Pro';
+  src: url('fonts/metro-nova/32416F_0_0.eot');
+  src: url('fonts/metro-nova/32416F_0_0.eot?#iefix') format('embedded-opentype'),
+       url('fonts/metro-nova/32416F_0_0.woff2') format('woff2'),
+       url('fonts/metro-nova/32416F_0_0.woff') format('woff'),
+       url('fonts/metro-nova/32416F_0_0.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-feature-settings: 'ss09';
+}
+
+// Font: Open Sans
+// --------------------------------------------------
+
+// Open Sans Regular
+@font-face {
+  font-family: 'Open Sans';
+  src: url('fonts/open-sans/opensans-regular-webfont.woff2') format('woff2'),
+       url('fonts/open-sans/opensans-regular-webfont.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('fonts/open-sans/opensans-italic-webfont.woff2') format('woff2'),
+       url('fonts/open-sans/opensans-italic-webfont.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+}
+
+
+// Open Sans Light
+@font-face {
+  font-family: 'Open Sans';
+  src: url('fonts/open-sans/opensans-light-webfont.woff2') format('woff2'),
+       url('fonts/open-sans/opensans-light-webfont.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('fonts/open-sans/opensans-lightitalic-webfont.woff2') format('woff2'),
+       url('fonts/open-sans/opensans-lightitalic-webfont.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+}
+
+
+// Open Sans Semibold
+@font-face {
+  font-family: 'Open Sans';
+  src: url('fonts/open-sans/opensans-semibold-webfont.woff2') format('woff2'),
+       url('fonts/open-sans/opensans-semibold-webfont.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('fonts/open-sans/opensans-semibolditalic-webfont.woff2') format('woff2'),
+       url('fonts/open-sans/opensans-semibolditalic-webfont.woff') format('woff');
+  font-weight: 600;
+  font-style: italic;
+}
+
+
+// Open Sans Bold
+@font-face {
+  font-family: 'Open Sans';
+  src: url('fonts/open-sans/opensans-bold-webfont.woff2') format('woff2'),
+       url('fonts/open-sans/opensans-bold-webfont.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('fonts/open-sans/opensans-bolditalic-webfont.woff2') format('woff2'),
+       url('fonts/open-sans/opensans-bolditalic-webfont.woff') format('woff');
+  font-weight: 700;
+  font-style: italic;
+}
+
+
+// Open Sans Extra Bold
+@font-face {
+  font-family: 'Open Sans';
+  src: url('fonts/open-sans/opensans-extrabold-webfont.woff2') format('woff2'),
+       url('fonts/open-sans/opensans-extrabold-webfont.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('fonts/open-sans/opensans-extrabolditalic-webfont.woff2') format('woff2'),
+       url('fonts/open-sans/opensans-extrabolditalic-webfont.woff') format('woff');
+  font-weight: 800;
+  font-style: italic;
+}
+
+
+
+
+// Font Awesome
+// --------------------------------------------------
+$fa-font-path: '/fonts/font-awesome';
+@import '../../bower_components/font-awesome/scss/font-awesome.scss';
+
+// Font Defaults
+// --------------------------------------------------
+
+%font-primary {
+  font-family: 'Open Sans', sans-serif;
+}
+
+%font-secondary {
+  font-family: 'Metro Nova Pro', sans-serif;
+  font-feature-settings: 'onum' 1, 'ss02' 1, 'ss03' 1, 'ss04' 1, 'ss06' 1, 'ss07' 1;
+}
+
+%font-handwritten {
+  font-family: 'Indie Flower', cursive;
+}
+
+$font-family-sans-serif:  'Open Sans', sans-serif;
+
+
+
+.h1 {
+  .ember-text-field {
+    font-size: 36px;
+    line-height: 1.1;
+    height: 46px;
+  }
+}
+
+.hand-written {
+  //@extend %font-handwritten;
+  font-size: 16px;
+  font-weight: normal;
+  margin: 10px 0;
+  font-style: italic;
+}
+
