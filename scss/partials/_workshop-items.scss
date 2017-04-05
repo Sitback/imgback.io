@@ -1,0 +1,38 @@
+.workshop-activity-item {
+  @include fadeIn;
+
+  .item-title {
+    flex: 1;
+    border-right: 1px solid $silver;
+
+    .btn {
+      white-space: normal;
+    }
+  }
+
+  .item-instructions {
+    flex: 3;
+    border-right: 1px solid $silver;
+  }
+
+  .item-follow-up {
+    flex: 2;
+    border-right: 1px solid $silver;
+  }
+
+  .item-materials {
+    flex: 1;
+  }
+
+  textarea {
+    &.form-control {
+      min-height: 104px;
+
+      &.extra-height {
+        min-height: 234px;
+      }
+    }
+  }
+}
+
+

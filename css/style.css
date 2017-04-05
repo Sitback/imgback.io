@@ -181,13 +181,14 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
 
 .sidebar {
   position: absolute;
-  top: 81px;
+  top: 78px;
   height: calc(100% - 83px);
   width: 250px;
+  right: 0;
   padding: 0 20px;
   overflow-y: scroll;
-  background-color: #f6f6f6;
-  border-right: 1px solid #cccccc; }
+  background-color: #ffffff;
+  border-left: 2px solid #ffffff; }
   .sidebar.affix-top {
     padding-top: 0px; }
   .sidebar.affix {
@@ -225,12 +226,14 @@ input.upload {
     padding-left: 0; }
     .checkbox input + label::before {
       padding-right: 5px;
-      font-family: 'Glyphicons Halflings';
-      content: '\e157';
+      font-family: 'FontAwesome';
+      content: '\f096';
       font-size: 1.2rem;
-      vertical-align: baseline; }
+      vertical-align: baseline;
+      width: 1.28571429em;
+      display: inline-block; }
   .checkbox input:checked + label::before {
-    content: '\e067';
+    content: '\f046';
     color: #d6252f; }
 
 .bg-position-list {
@@ -239,7 +242,7 @@ input.upload {
   flex-flow: row wrap;
   align-items: stretch;
   padding-left: 0;
-  width: 134px;
+  width: 150px;
   border-left: 1px solid #cccccc; }
 
 .bg-position-item {
@@ -488,7 +491,7 @@ input.upload {
   width: 1540px;
   height: 1030px;
   border-width: 50px 50px 80px;
-  transform: scale(0.6) translate(0, -32%); }
+  transform: scale(0.6) translate(-20%, -32%); }
   .small-desktop:after {
     position: absolute;
     bottom: -95px;
@@ -531,7 +534,7 @@ input.upload {
   height: 1180px;
   border-width: 50px;
   border-radius: 0;
-  transform: scale(0.6) translate(-25%, -32%); }
+  transform: scale(0.56) translate(-39%, -40%); }
   .hdtv::before {
     position: absolute;
     bottom: -102px;

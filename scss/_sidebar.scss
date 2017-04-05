@@ -2,13 +2,14 @@
 // Sidebar
 .sidebar {
   position: absolute;
-  top: 81px;
+  top: 78px;
   height: calc(100% - 83px);
   width: 250px;
+  right: 0;
   padding: 0 20px;
   overflow-y: scroll;
-  background-color: $wild-sand;
-  border-right: 1px solid $silver;
+  background-color: $white;
+  border-left: 2px solid $white;
 
   &.affix-top {
     padding-top: 0px;
@@ -59,17 +60,19 @@ input.upload {
 
       &::before {
         padding-right: 5px;
-        font-family: 'Glyphicons Halflings';
-        content: '\e157';
+        font-family: 'FontAwesome';
+        content: '\f096';
         font-size: 1.2rem;
         vertical-align: baseline;
+        width: 1.28571429em;
+        display: inline-block;
       }
 
     }
     &:checked + label {
       &::before {
-        content: '\e067';
-        color: $alizarin-crimson;
+        content: '\f046';
+        color: $primary;
       }
     }
   }
@@ -82,7 +85,7 @@ input.upload {
   flex-flow: row wrap;
   align-items: stretch;
   padding-left: 0;
-  width: 134px;
+  width: 150px;
   border-left: 1px solid $silver;
 
 }
