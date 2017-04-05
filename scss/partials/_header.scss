@@ -1,0 +1,56 @@
+//
+// Header styles
+// --------------------------------------------------
+.sitback-header {
+  position: fixed;
+  width: 100%;
+  background: $concrete;
+  border-bottom: 2px solid $white;
+  z-index: 50;
+}
+
+.navbar {
+  & + {
+    .panel {
+      border-top-width: 0;
+    }
+  }
+}
+
+.logo-wrap {
+
+  .logo-title {
+    font-size: 1.3em;
+    margin-top: 0;
+  }
+
+  sup {
+    color: lighten($secondary, 20%);
+  }
+
+  img {
+    height: 40px;
+    width: 85px;
+    vertical-align: middle;
+    margin-left: .25em;
+  }
+
+  .logo {
+    display: block;
+    font-size: 16px;
+    overflow: hidden;
+
+    &:hover {
+      text-decoration: none;
+      border-bottom-color: transparent;
+
+      span {
+        color: $black;
+
+        &.highlight {
+          color: $primary;
+        }
+      }
+    }
+  }
+}

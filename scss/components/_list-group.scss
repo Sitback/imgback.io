@@ -1,0 +1,39 @@
+ // List groups
+
+.list-group-horizontal {
+  @extend %flex-row;
+  @extend %flex-align-stretch;
+
+  > {
+    div,
+    a,
+    li,
+    button {
+      flex: 1;
+    }
+  }
+}
+
+
+ul {
+  &.list-check {
+    list-style: none;
+    padding-left: 2.8rem;
+
+    li {
+      list-style-type: none;
+      margin-bottom: .75em;
+
+      &::before {
+        content: '\f046';
+        font-family: 'FontAwesome';
+        color: $primary;
+        display: inline-block;
+        float: left;
+        margin-left: -1.5em;
+        margin-right: .5em;
+        font-size: 85%;
+      }
+    }
+  }
+}

@@ -1,0 +1,150 @@
+//
+// Navigation
+// --------------------------------------------------
+
+.navbar {
+  padding: 15px;
+}
+
+// Navigation
+.hamburger {
+  display: inline-block;
+  width: 35px;
+  height: 24px;
+  position: relative;
+  transform: rotate(0deg);
+  transition: .5s ease-in-out;
+  cursor: pointer;
+
+  span {
+    display: block;
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    background: $secondary;
+    border-radius: 3px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transform-origin: 50% 50%;
+    transition: .3s ease-in-out;
+
+    &:nth-child(1) {
+      top: 0%;
+    }
+
+    &:nth-child(2),
+    &:nth-child(3) {
+      top: 50%;
+      transform: translateY(-50%);
+      transition-delay: .1s;
+    }
+
+    &:nth-child(4) {
+      bottom: 0%;
+    }
+  }
+
+  &.open {
+    span {
+      &:nth-child(1) {
+        opacity: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      &:nth-child(2) {
+        transform: rotate(45deg);
+      }
+
+      &:nth-child(3) {
+        transform: rotate(-45deg);
+      }
+
+      &:nth-child(4) {
+        opacity: 0;
+        bottom: 50%;
+        transform: translateY(50%);
+      }
+    }
+  }
+
+  @media (min-width: $screen-md) {
+    display: none;
+  }
+}
+
+.primary-nav {
+  @extend %font-primary;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-weight: 700;
+
+  @media (min-width: $screen-md) {
+    flex-direction: row;
+  }
+
+  li {
+    width: 100%;
+    padding-top: 15px;
+
+    @media (min-width: $screen-md) {
+      margin: 0 8px;
+      padding: 0;
+      width: auto;
+    }
+
+    @media (min-width: $screen-lg) {
+      margin: 0 10px;
+    }
+
+    &:hover {
+      a {
+        color: $secondary;
+      }
+    }
+
+    &.active {
+      a {
+        color: $secondary;
+        font-weight: 800;
+      }
+    }
+  }
+
+  a {
+    text-decoration: none;
+    // color: $silver-chalice;
+    color: $black-50;
+
+    @media (min-width: $screen-sm) {
+      padding: 5px 5px;
+    }
+  }
+}
+
+// Inline Nav
+.inline-nav {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+
+  @media (min-width: $screen-sm) {
+    justify-content: space-between;
+    margin-top: 2 * $leading;
+  }
+
+  li {
+    line-height: 1.8;
+    padding: 0 10px;
+
+
+    @media (min-width: $screen-sm) {
+      line-height: 1.4;
+    }
+  }
+}

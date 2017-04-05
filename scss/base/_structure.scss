@@ -1,0 +1,41 @@
+//
+// Structure
+// --------------------------------------------------
+
+html {
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after {
+    box-sizing: inherit;
+  }
+}
+
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  background-color: $concrete;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+
+.row {
+
+  &.row-counter {
+    margin-left: -1.3em;
+    margin-right: -1.3em;
+  }
+}
+
+.content-wrapper {
+  padding-right: 250px;
+}

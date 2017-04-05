@@ -1,0 +1,22 @@
+.page-wrapper {
+  @media (max-width: 1024px) {
+    display: none;
+  }
+}
+
+.desktop-min-warning {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @media (min-width: 1025px) {
+    display: none;
+  }
+
+  .panel {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 10px 20px;
+  }
+}

@@ -1,0 +1,21 @@
+//
+// Visibility helpers
+// --------------------------------------------------
+
+.hidden {
+  display: none !important;
+}
+
+
+.hidden-xs-only {
+  @media (max-width: $screen-sm) {
+    display: none !important;
+  }
+}
+
+.hidden-sm {
+  @media (min-width: $screen-sm) and (max-width: $screen-sm-max)  {
+    display: none !important;
+  }
+}
+
