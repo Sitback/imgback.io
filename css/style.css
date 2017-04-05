@@ -491,7 +491,7 @@ input.upload {
   width: 1540px;
   height: 1030px;
   border-width: 50px 50px 80px;
-  transform: scale(0.6) translate(0, -32%); }
+  transform: scale(0.6) translate(-20%, -32%); }
   .small-desktop:after {
     position: absolute;
     bottom: -95px;
@@ -534,7 +534,7 @@ input.upload {
   height: 1180px;
   border-width: 50px;
   border-radius: 0;
-  transform: scale(0.6) translate(-25%, -32%); }
+  transform: scale(0.56) translate(-39%, -40%); }
   .hdtv::before {
     position: absolute;
     bottom: -102px;

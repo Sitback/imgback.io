@@ -118,9 +118,11 @@ $(document).ready(function(){
     var device = $('#checkbox-' + dev);
     device.trigger('click');
     if (!!device.prop('checked')) {
-      target.removeClass('btn-default').addClass('btn-primary');
+      target.removeClass('btn-default').addClass('btn-primary').removeClass('outline');
+      target.find("span.fa").removeClass("hidden");
     } else {
-      target.addClass('btn-default').removeClass('btn-primary');
+      target.addClass('btn-default').removeClass('btn-primary').addClass('outline');      
+      target.find("span.fa").addClass("hidden");
     }
   }
 
