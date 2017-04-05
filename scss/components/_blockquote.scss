@@ -1,0 +1,32 @@
+blockquote {
+
+  &.lead {
+    @extend %hug;
+
+    p {
+
+      &:first-child {
+        @extend %hug;
+      }
+    }
+  }
+
+  footer {
+
+    @extend %margin-top-20;
+
+    &::before {
+      content: '\2013';
+      display: inline-block;
+      margin-right: .5em;
+    }
+
+    .quote-name,
+    .quote-position {
+
+      &::after {
+        content: ', ';
+      }
+    }
+  }
+}

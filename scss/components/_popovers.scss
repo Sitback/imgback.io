@@ -1,0 +1,137 @@
+//
+// Popovers
+// --------------------------------------------------
+
+$popover-arrow-width: 20px;
+$popover-arrow-outer-width: 20px;
+$popover-arrow-color: $secondary;
+$popover-arrow-outer-color: $secondary;
+
+
+
+/* <div class="popover fade bottom in" role="tooltip" id="popover557991" style="top: 260px; left: 0px; display: block;"><div class="arrow" style="left: 20.5645%;"></div><h3 class="popover-title">Section Height</h3><div class="popover-content">Changing the <b>section</b> height will give you a better idea of how your image will scale when used as a content background.</div></div> */
+
+.popover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  max-width: 250px;
+  padding: 1px;
+  // Our parent element can be arbitrary since popovers are by default inserted as a sibling of their target element.
+  // So reset our font and text properties to avoid inheriting weird values.
+
+  background-color: $secondary;
+  background-clip: padding-box;
+  border: 1px solid transparent;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  $popover-box-shadow-color: rgba(0,0,0,.2);
+  box-shadow: (0,  5,  10,  $popover-box-shadow-color);
+
+
+  // Offset the popover to account for the popover arrow
+  &.top     { margin-top: -$popover-arrow-width; }
+  &.right   { margin-left: $popover-arrow-width; }
+  &.bottom  { margin-top: $popover-arrow-width; }
+  &.left    { margin-left: -$popover-arrow-width; }
+}
+.popover-title {
+  font-size: 14px;
+  color: $concrete;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-bottom: 0;
+  padding-top: 0;
+  line-height: 1.2;
+}
+.popover-content {
+  padding: 5px 20px 10px;
+  color: $white;
+  font-size: 11px;
+}
+
+// Arrows
+//
+// .arrow is outer, .arrow:after is inner
+
+.popover > .arrow {
+  &,
+  &:after {
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+  }
+}
+.popover > .arrow {
+  border-width: $popover-arrow-outer-width;
+}
+.popover > .arrow:after {
+  border-width: $popover-arrow-width;
+  content: "";
+}
+
+.popover {
+  &.top > .arrow {
+    left: 50%;
+    margin-left: -$popover-arrow-outer-width;
+    border-bottom-width: 0;
+    border-top-color: $white;
+    bottom: -$popover-arrow-outer-width;
+    &:after {
+      content: " ";
+      bottom: 1px;
+      margin-left: -$popover-arrow-width;
+      border-bottom-width: 0;
+      border-top-color: $popover-arrow-color;
+    }
+  }
+  &.right > .arrow {
+    top: 50%;
+    left: -$popover-arrow-outer-width;
+    margin-top: -$popover-arrow-outer-width;
+    border-left-width: 0;
+    border-right-color: $popover-arrow-outer-color;
+    &:after {
+      content: " ";
+      left: 1px;
+      bottom: -$popover-arrow-width;
+      border-left-width: 0;
+      border-right-color: $popover-arrow-color;
+    }
+  }
+  &.bottom > .arrow {
+    left: 50%;
+    margin-left: -$popover-arrow-outer-width;
+    border-top-width: 0;
+    border-bottom-color: $popover-arrow-outer-color;
+    top: -$popover-arrow-outer-width;
+    &:after {
+      content: " ";
+      top: 1px;
+      margin-left: -$popover-arrow-width;
+      border-top-width: 0;
+      border-bottom-color: $popover-arrow-color;
+    }
+  }
+
+  &.left > .arrow {
+    top: 50%;
+    right: -$popover-arrow-outer-width;
+    margin-top: -$popover-arrow-outer-width;
+    border-right-width: 0;
+    border-left-color: $popover-arrow-outer-color;
+    &:after {
+      content: " ";
+      right: 1px;
+      border-right-width: 0;
+      border-left-color: $popover-arrow-color;
+      bottom: -$popover-arrow-width;
+    }
+  }
+}

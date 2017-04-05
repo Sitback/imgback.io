@@ -4,8 +4,7 @@ $(document).ready(function(){
       readImage = new FileReader(),
       inputHeight = '#input-height',
       sectionHeightClear = '#section-height-clear',
-      toggleBackgroundFillType = '#toggle-bg-fill-type',
-      toggleBackgroundFill = '#toggle-bg-fill',
+      toggleBackgroundFill = '[name="background-type"]',
       inputBackgroundPosition = 'input[name=bg-position]',
       deviceIphone = 'iphone',
       deviceS7 = 's7',
@@ -21,7 +20,12 @@ $(document).ready(function(){
       inputCustomHeight = '#custom-device-height',
       customHeightClear = '#device-custom-clear',
       customWidth = '.custom, .custom .device-screen',
-      customHeight = '.custom, .custom .image-background';
+      customHeight = '.custom, .custom .image-background',
+      helpIcon = '.icon.help';
+
+      $('#test_link').on('click', function() {
+        window.location = '/img/2L9A2117-High.jpg';
+      });
 
 
   // Show uploaded image as section background on each device.
@@ -37,16 +41,20 @@ $(document).ready(function(){
     }
   });
 
+  $(helpIcon).on('click', function() {
+    var $this = $(this);
+    $this.toggleClass('active');
+    $this.parents('.sidebar-item').find('.panel.help').toggleClass('active');
+  });
 
   // Toggle Background fill type
-  $(toggleBackgroundFill).change(function() {
+  $(toggleBackgroundFill).click(function() {
     if ($(this).val() === 'contain') {
       $(deviceBackground).css({
         'background-size': 'contain',
         'max-width': '100%'
       });
-    }
-    else {
+    } else {
       $(deviceBackground).css('background-size', 'cover');
       $(deviceOverflow).css({
         'background-size': "auto 100%",
@@ -110,9 +118,11 @@ $(document).ready(function(){
     var device = $('#checkbox-' + dev);
     device.trigger('click');
     if (!!device.prop('checked')) {
-      target.removeClass('btn-default').addClass('btn-primary');
+      target.removeClass('btn-default').addClass('btn-primary').removeClass('outline');
+      target.find("span.fa").removeClass("hidden");
     } else {
-      target.addClass('btn-default').removeClass('btn-primary');
+      target.addClass('btn-default').removeClass('btn-primary').addClass('outline');      
+      target.find("span.fa").addClass("hidden");
     }
   }
 
@@ -148,11 +158,30 @@ $(document).ready(function(){
   $(inputCustomWidth).on('change', function () {
     var newDeviceWidth = $(inputCustomWidth).val();
     $(customWidth).css('width', newDeviceWidth + 'px');
+    //calculate transform
+    CalculateAndTransform();
   });
   $(inputCustomHeight).on('change', function () {
     var newDeviceHeight = $(inputCustomHeight).val();
     $(customHeight).css('height', newDeviceHeight + 'px');
+    //calculate transform
+    CalculateAndTransform();
   });
+
+  function CalculateAndTransform(){
+    var device = $(".device.custom");
+    var customParent = $("div#custom.device-wrapper");
+    var width = customParent.width() - 80;
+    var scale = width / $(device).width();
+    var height = customParent.height() * scale;
+
+    if(scale < 1.0){
+        var translateX = (($(device).width() - width) / 2) * 100 / width;
+        var translateY = (($(device).height() - height) / 2) * 100 / height;
+        $(device).css('transform', "scale(" + scale + ") translate(-" + translateX + "%, -" + translateY + "%)");
+    }
+  }  
+
   $(customHeightClear).on('click', function () {
     $(customWidth).css('width', '');
     $(customHeight).css('height', '');
