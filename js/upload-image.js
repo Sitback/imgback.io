@@ -23,6 +23,10 @@ $(document).ready(function(){
       customHeight = '.custom, .custom .image-background',
       helpIcon = '.icon.help';
 
+      $('#test_link').on('click', function() {
+        window.location = '/img/2L9A2117-High.jpg';
+      });
+
 
   // Show uploaded image as section background on each device.
   $(source).on('change', function () {
