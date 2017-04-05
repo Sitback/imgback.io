@@ -158,11 +158,30 @@ $(document).ready(function(){
   $(inputCustomWidth).on('change', function () {
     var newDeviceWidth = $(inputCustomWidth).val();
     $(customWidth).css('width', newDeviceWidth + 'px');
+    //calculate transform
+    CalculateAndTransform();
   });
   $(inputCustomHeight).on('change', function () {
     var newDeviceHeight = $(inputCustomHeight).val();
     $(customHeight).css('height', newDeviceHeight + 'px');
+    //calculate transform
+    CalculateAndTransform();
   });
+
+  function CalculateAndTransform(){
+    var device = $(".device.custom");
+    var customParent = $("div#custom.device-wrapper");
+    var width = customParent.width() - 80;
+    var scale = width / $(device).width();
+    var height = customParent.height() * scale;
+
+    if(scale < 1.0){
+        var translateX = (($(device).width() - width) / 2) * 100 / width;
+        var translateY = (($(device).height() - height) / 2) * 100 / height;
+        $(device).css('transform', "scale(" + scale + ") translate(-" + translateX + "%, -" + translateY + "%)");
+    }
+  }  
+
   $(customHeightClear).on('click', function () {
     $(customWidth).css('width', '');
     $(customHeight).css('height', '');
