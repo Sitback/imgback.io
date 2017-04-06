@@ -127,16 +127,17 @@
 // Form elements
 
 .form-control {
-  border-width: 0;
-  border-bottom-width: 1px;
+  border: 1px solid $alto;
   box-shadow: none;
+  box-sizing: border-box;
   padding-left: 0;
   transition: all .2s ease;
-  padding: 10px 12px 0 0;
+  padding: 11px 12px 10px;
 
   &:focus {
     box-shadow: none;
     border-bottom: 2px solid $primary;
+    padding: 10px 12px 9px;
   }
 
   &.form-inline {
@@ -233,4 +234,40 @@ textarea {
   &.text-danger {
     color: $primary;
   }
+}
+
+
+// Input groups
+.input-group {
+  display: flex;
+  align-items: stretch;
+
+  .input-group-addon,
+  .input-group-btn,
+  .form-control {
+    width: auto;
+  }
+  
+  .input-group-addon {
+    border: 1px solid $alto;
+    background-color: $concrete;
+    padding: 9px 5px 3px;
+    font-size: 13px;
+  }
+
+  .form-control {
+    + .input-group-addon {
+      border-left: 0;
+    }
+  }
+}
+
+// Input groups need that 100% width though
+.input-group > .form-control {
+  width: 100%;
+}
+
+.control-label {
+  margin-bottom: 0;
+  vertical-align: middle;
 }
