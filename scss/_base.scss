@@ -18,10 +18,15 @@ $pomegranate:     $trinidad;
 $alizarin-crimson:     rgb(214, 37, 47);     //#D6252F;
 $firefly:              rgb(13, 45, 56);      //#0D2D38;
 
+html {
+  height: 100%;
+}
 
-// Bootstrap Overrides
 body {
   position: relative;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 label {

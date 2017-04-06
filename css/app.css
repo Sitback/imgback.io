@@ -10031,6 +10031,10 @@ body {
   margin-right: -1.3em; }
 
 .content-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: 75px;
   padding-right: 250px; }
 
 .margin-top-5 {
@@ -10980,15 +10984,16 @@ abbr[title] {
     margin-top: -5px; }
 
 .form-control {
-  border-width: 0;
-  border-bottom-width: 1px;
+  border: 1px solid #d7d7d7;
   box-shadow: none;
+  box-sizing: border-box;
   padding-left: 0;
   transition: all .2s ease;
-  padding: 10px 12px 0 0; }
+  padding: 11px 12px 10px; }
   .form-control:focus {
     box-shadow: none;
-    border-bottom: 2px solid #d6252f; }
+    border-bottom: 2px solid #d6252f;
+    padding: 10px 12px 9px; }
   .form-control.form-inline {
     width: auto;
     display: inline-block; }
@@ -11044,6 +11049,28 @@ textarea.form-control {
   margin-top: .5em; }
   .error:not(:empty).text-danger {
     color: #d6252f; }
+
+.input-group {
+  display: flex;
+  align-items: stretch; }
+  .input-group .input-group-addon,
+  .input-group .input-group-btn,
+  .input-group .form-control {
+    width: auto; }
+  .input-group .input-group-addon {
+    border: 1px solid #d7d7d7;
+    background-color: #f2f2f2;
+    padding: 9px 5px 3px;
+    font-size: 13px; }
+  .input-group .form-control + .input-group-addon {
+    border-left: 0; }
+
+.input-group > .form-control {
+  width: 100%; }
+
+.control-label {
+  margin-bottom: 0;
+  vertical-align: middle; }
 
 .tile {
   padding: 20px 25px;
@@ -11816,8 +11843,14 @@ blockquote footer .quote-position::after {
     .sample-script-block.flex-row > .flex-grid-item .panel-body .sample-script-title {
       flex-grow: 1; }
 
+html {
+  height: 100%; }
+
 body {
-  position: relative; }
+  position: relative;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column; }
 
 label {
   font-weight: normal; }
@@ -11898,11 +11931,11 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
 .sidebar {
   position: absolute;
   top: 78px;
-  height: calc(100% - 83px);
+  height: calc(100vh - 78px);
   width: 250px;
   right: 0;
   padding: 0 20px;
-  overflow-y: scroll;
+  overflow: scroll;
   background-color: #ffffff;
   border-left: 2px solid #ffffff; }
   .sidebar.affix-top {
@@ -12279,16 +12312,16 @@ input.upload {
     max-height: 1080px; }
 
 .custom {
-  width: 1104px;
-  height: 848px;
+  width: 592px;
+  height: 464px;
   border-width: 40px;
   box-sizing: content-box; }
   .custom .device-screen {
-    width: 1024px;
-    height: 768px;
-    max-height: 768px; }
+    width: 512px;
+    height: 384px;
+    max-height: 384px; }
   .custom .overflow {
-    height: 768px;
-    max-height: 768px; }
+    height: 384px;
+    max-height: 384px; }
 
 /*# sourceMappingURL=app.css.map */
