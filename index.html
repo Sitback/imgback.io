@@ -25,68 +25,66 @@
   </head>
   <body>
 
-  <header id="ember398" class="sitback-header navbar ember-view">
-    <div class="">
-      <div class="row between-xs middle-xs bottom-md">
-        <div class="col-xs-9 col-sm">
-          <div class="logo-wrap">
-            <a id="ember433" href="/" class="logo ember-view">    
-              <h3 class="logo-title text-regular flex-grid-item stretch">
-                Image  previewer<sup class="beta">[beta]</sup> by <span class="logotype"><span class="highlight">Sitback</span></span>
-              </h3>
-            </a>
-          </div>
+  <header class="sitback-header navbar">
+    <div class="row between-xs middle-xs bottom-md">
+      <div class="col-xs-9 col-sm">
+        <div class="logo-wrap">
+          <a href="/" class="logo">    
+            <h3 class="logo-title text-regular flex-grid-item stretch">
+              Image  previewer<sup class="beta">[beta]</sup> by <span class="logotype"><span class="highlight">Sitback</span></span>
+            </h3>
+          </a>
         </div>
-        <nav class="col-xs-3 col-sm-10 col-md-8 end-xs">
-          <div class="hamburger " data-ember-action="423">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-
-
-
-          <div id="ember432" class="hidden-xs-only hidden-sm ember-view">
-            <ul class="primary-nav row middle-md end-md">
-              <li>
-                Start Here:
-              </li>
-              <li>
-                <a class="start-button button primary outline" data-device="iphone" title="Show iPhone 6">
-                  <span class="fa fa-circle hidden" aria-hidden="true"></span>&nbsp;
-                  iPhone 6
-                  </a>
-              </li>
-              <li>
-                <a class="start-button button primary outline" data-device="s7" title="Show Samsung Galaxy S7">
-                  <span class="fa fa-circle hidden" aria-hidden="true"></span>&nbsp;
-                  Galaxy S7</a>
-              </li>
-              <li>
-                <a class="start-button button primary outline" data-device="ipad" title="Show iPad">
-                  <span class="fa fa-circle hidden" aria-hidden="true"></span>&nbsp;
-                  iPad</a>
-              </li>
-              <li>
-                <a class="start-button button primary outline" data-device="small-desktop" title="Show Small Desktop">
-                  <span class="fa fa-circle hidden" aria-hidden="true"></span>&nbsp;
-                  Desktop</a>
-              </li>
-              <li>
-                <a class="start-button button primary outline" data-device="hdtv" title="Show HDTV">
-                  <span class="fa fa-circle hidden" aria-hidden="true"></span>&nbsp;
-                  HDTV</a>
-              </li>
-              <li>
-                <a class="start-button button primary outline" data-device="custom" title="Show Custom">
-                  <span class="fa fa-circle hidden" aria-hidden="true"></span>&nbsp;
-                  Custom</a>
-              </li>
-            </ul>
-          </div>
-        </nav>
       </div>
+      <nav class="col-xs-3 col-sm-10 col-md-8 end-xs">
+        <div class="hamburger ">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+
+
+        <div class="hidden-xs-only hidden-sm">
+          <ul class="primary-nav row middle-md end-md">
+            <li>
+              Start Here:
+            </li>
+            <li>
+              <a class="start-button button primary outline" data-device="iphone" title="Show iPhone 6">
+                <span class="fa fa-circle hidden" aria-hidden="true"></span>&nbsp;
+                iPhone 6
+                </a>
+            </li>
+            <li>
+              <a class="start-button button primary outline" data-device="s7" title="Show Samsung Galaxy S7">
+                <span class="fa fa-circle hidden" aria-hidden="true"></span>&nbsp;
+                Galaxy S7</a>
+            </li>
+            <li>
+              <a class="start-button button primary outline" data-device="ipad" title="Show iPad">
+                <span class="fa fa-circle hidden" aria-hidden="true"></span>&nbsp;
+                iPad</a>
+            </li>
+            <li>
+              <a class="start-button button primary outline" data-device="small-desktop" title="Show Small Desktop">
+                <span class="fa fa-circle hidden" aria-hidden="true"></span>&nbsp;
+                Desktop</a>
+            </li>
+            <li>
+              <a class="start-button button primary outline" data-device="hdtv" title="Show HDTV">
+                <span class="fa fa-circle hidden" aria-hidden="true"></span>&nbsp;
+                HDTV</a>
+            </li>
+            <li>
+              <a class="start-button button primary outline" data-device="custom" title="Show Custom">
+                <span class="fa fa-circle hidden" aria-hidden="true"></span>&nbsp;
+                Custom</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
     </div>
   </header>
 
@@ -106,7 +104,7 @@
       </div>
     </div>
 
-    <div class="flex-row">
+    <div class="flex-row flex-hog">
       <div class="container">
 <!--         <div class="jumbotron header">
           <h1><span class="feature-icon glyphicon glyphicon-phone"></span> Image Background Previewer.</h1>
@@ -284,13 +282,11 @@
             </div>
           </div>
           <div class="form-inline margin-top-20 row between-sm middle-sm">
-            <div class="input-group row center-sm">
-              <div class="col-sm flex-hog">
-                <input id="input-height" title="Set Section Height" class="form-control" type="text" placeholder="">
-              </div>
-              <label for="input-height" class="input-group-addon">px</label>
+            <div class="input-group">
+              <input id="input-height" title="Set Section Height" class="form-control" type="text" placeholder="Height">
+              <span class="input-group-addon">px</span>
             </div>
-            <button id="section-height-clear" class="button secondary xx-small margin-top-10">Clear</button>
+            <button id="section-height-clear" class="button secondary xx-small">Clear</button>
           </div>
         </div>
 
