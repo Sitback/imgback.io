@@ -104,6 +104,7 @@ $(document).ready(function(){
       $(e.data.device).css({
         'display': 'block'
       });
+      CalculateAndTransform($(e.data.device).find(".device"));
     } else {
       ga('send', 'event', 'devices', 'off', $this.data('device'));
       $(e.data.device).css({
@@ -168,18 +169,18 @@ $(document).ready(function(){
     CalculateAndTransform();
   });
 
-  function CalculateAndTransform(){
-    var device = $(".device.custom");
-    var customParent = $("div#custom.device-wrapper");
-    var width = customParent.width() - 80;
-    var scale = width / $(device).width();
+  function CalculateAndTransform(device){
+    device = device || $(".device.custom");
+    var customParent = $(device).closest("div.device-wrapper");
+    var width = customParent.width();
+    var deviceWidth =  $(device).width() + parseInt($(device).css('borderLeft')) + parseInt($(device).css('borderRight'));
+    var scale = width / deviceWidth;
     var height = customParent.height() * scale;
 
-    if(scale < 1.0){
-        var translateX = (($(device).width() - width) / 2) * 100 / width;
-        var translateY = (($(device).height() - height) / 2) * 100 / height;
-        $(device).css('transform', "scale(" + scale + ") translate(-" + translateX + "%, -" + translateY + "%)");
-    }
+    var translateX = ((deviceWidth - width) / 2) * 100 / width;
+    var translateY = (($(device).height() - height) / 2) * 100 / height;
+    var transform = "scale(" + scale + ") translate(" + ((-1) * translateX) + "%, " + ((-1) * translateY) + "%)";
+    $(device).css('transform', transform);        
   }  
 
   $(customHeightClear).on('click', function () {
