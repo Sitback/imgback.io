@@ -1,0 +1,142 @@
+//
+// Panels
+// --------------------------------------------------
+
+.panel {
+  padding: 35px 0;
+  max-width: 100%;
+  border-top: 2px solid $white;
+
+  @media (min-width: $screen-sm) {
+    padding: 35px;
+  }
+
+  .panel-body {
+    padding: 10px;
+  }
+
+  .panel {
+    border-top-width: 0;
+    padding: 10px;
+  }
+
+  &.bordered {
+    border: 1px solid darken($concrete, 30%);
+  }
+
+  // Panel sizes
+  //
+  &.zero {
+    padding: 0;
+  }
+
+  &.small {
+    @media (min-width: $screen-sm) {
+      padding: 20px 20px 30px;
+    }
+  }
+
+  &.medium {
+    @media (min-width: $screen-sm) {
+      padding: 40px 35px 70px;
+    }
+
+    @media (min-width: $screen-md) {
+      padding: 50px 50px 80px;
+    }
+  }
+
+  &.large {
+    @media (min-width: $screen-sm) {
+      padding: 75px 20px;
+    }
+
+    @media (min-width: $screen-md) {
+      padding: 100px 35px;
+    }
+  }
+
+  // Panel variants
+  &.default {
+    background-color: $concrete;
+
+    &.arrow-down {
+      &::after {
+        border-top-color: $concrete;
+      }
+    }
+  }
+
+  &.secondary,
+  &.primary {
+    color: $white;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    a,
+    .lead {
+      color: $white;
+    }
+  }
+
+  &.primary {
+    background-color: $primary;
+  }
+
+  &.secondary  {
+    background-color: $secondary;
+  }
+
+  &.white  {
+    background-color: $white;
+  }
+
+  &.gray {
+    background-color: $concrete;
+  }
+
+  // Panel Components
+  &.arrow-down {
+    position: relative;
+
+    &::after {
+      position: absolute;
+      top: 100%;
+      right: 50%;
+      transform: translate(50%, 0);
+      content: '';
+      border: 40px solid transparent;
+      border-top-width: 30px;
+    }
+  }
+
+  &.row-counter {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .title {
+    margin-top: 0;
+  }
+
+  &.help {
+    overflow: hidden;
+    border: none;
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    transition: padding 1s, max-height 1s;
+
+    &.active {
+      height: auto;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      max-height: 400px;
+
+    }
+  }
+}

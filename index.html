@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Background image thing &ndash; built by Sitback</title>
+    <title>Background image previewer &ndash; built by Sitback</title>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -16,72 +16,107 @@
     <link rel="icon" type="image/png" href="img/favicon-16x16.png" sizes="16x16">
     <link rel="manifest" href="img/manifest.json">
     <link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#d6252f">
-    <meta name="theme-color" content="#ffffff">
-    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
+    <meta name="theme-color" content="#D6252F">
+    <script src="https://use.fontawesome.com/30f3ebe5d2.js"></script>
+
+<!--     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> -->
+<!--     <link rel="stylesheet" href="css/style.css"> -->
+    <link rel="stylesheet" href="css/app.css">
   </head>
   <body>
-    <!-- Sitback header -->
-    <div class="sitback-header">
-      <div class="util-holder">
-        <div class="util-inner">
-          <img src="img/phone.svg" class="img-responsive" alt="">
-          <a href="tel:+61 2 9247 2223">+61 2 9247 2223</a>
-          &nbsp;|&nbsp;
-          <a href="https://twitter.com/sitback" target="_blank">
-            <img alt="Sitback's Twitter" src="img/twitter.svg" class="img-responsive" alt="">
-          </a>
-          &nbsp; |&nbsp;
-          <a href="https://www.linkedin.com/company/sitback-solutions" target="_blank">
-            <img alt="Sitback's LinkedIn" src="img/linkedin.svg" class="img-responsive" alt="">
+
+  <header class="sitback-header navbar">
+    <div class="row between-xs middle-xs bottom-md">
+      <div class="col-xs-9 col-sm">
+        <div class="logo-wrap">
+          <a href="/" class="logo">    
+            <h3 class="logo-title text-regular flex-grid-item stretch">
+              Image  previewer<sup class="beta">[beta]</sup> by <span class="logotype"><span class="highlight">Sitback</span></span>
+            </h3>
           </a>
         </div>
       </div>
-      <div class="navbar">
-        <h1>Image background previewer</h1><span class="by">by</span><a href="//www.sitback.com.au/" class="logo"><img alt="Sitback Solutions" src="img/logo.svg" alt=""></a>
+      <nav class="col-xs-3 col-sm-10 col-md-8 end-xs">
+        <div class="hamburger ">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+
+
+        <div class="hidden-xs-only hidden-sm">
+          <ul class="primary-nav row middle-md end-md">
+            <li>
+              Start Here:
+            </li>
+            <li>
+              <a class="start-button button primary outline" data-device="iphone" title="Show iPhone 6">
+                <span class="fa fa-circle hidden" aria-hidden="true"></span>&nbsp;
+                iPhone 6
+                </a>
+            </li>
+            <li>
+              <a class="start-button button primary outline" data-device="s7" title="Show Samsung Galaxy S7">
+                <span class="fa fa-circle hidden" aria-hidden="true"></span>&nbsp;
+                Galaxy S7</a>
+            </li>
+            <li>
+              <a class="start-button button primary outline" data-device="ipad" title="Show iPad">
+                <span class="fa fa-circle hidden" aria-hidden="true"></span>&nbsp;
+                iPad</a>
+            </li>
+            <li>
+              <a class="start-button button primary outline" data-device="small-desktop" title="Show Small Desktop">
+                <span class="fa fa-circle hidden" aria-hidden="true"></span>&nbsp;
+                Desktop</a>
+            </li>
+            <li>
+              <a class="start-button button primary outline" data-device="hdtv" title="Show HDTV">
+                <span class="fa fa-circle hidden" aria-hidden="true"></span>&nbsp;
+                HDTV</a>
+            </li>
+            <li>
+              <a class="start-button button primary outline" data-device="custom" title="Show Custom">
+                <span class="fa fa-circle hidden" aria-hidden="true"></span>&nbsp;
+                Custom</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+    <!-- Sitback header -->
+  <div class="content-wrapper flex-grid-item">
+
+    <div class="panel large">
+      <div class="container">
+        <h2 class="text-center medium">                
+          Hate dealing with background images?
+        </h2>
+        <div class="row around-xs">
+          <div class="col-xs-12 col-sm-10">
+            <p class="lead text-center">The <span class="logotype"><span class="highlight">Sitback</span> <span class="lowlight"></span></span> image previewer will allow you to preview background images that you are going to use on your website in a variety of view modes, and at a variety of resolutions. It will give you a reasonable overview of how your image will look after implementation, and give you a guide as to how to create your images to keep the most important information on screen at all times.</p>
+          </div>
+        </div>
       </div>
     </div>
 
-
-    <div class="flex-row">
-      <div class="content-area">
+    <div class="flex-row flex-hog">
+      <div class="container">
 <!--         <div class="jumbotron header">
           <h1><span class="feature-icon glyphicon glyphicon-phone"></span> Image Background Previewer.</h1>
         </div>
  -->
         <div class="content">
-          <div class="intro row">
-            <div class="col-md-7 col-lg-7">
-              <p class="lead">
-                Hate dealing with background images?
-                <br>
-                This tool will allow you to preview background images that you are going to use on your website in a variety of view modes, and at a variety of resolutions. It will give you a reasonable overview of how your image will look after implementation, and give you a guide as to how to create your images to keep the most important information on screen at all times.</p>
-            </div>
-            <div class="start-box col-md-5 col-lg-5">
-              <h2>Start here</h2>
-              <p>Select some devices and get started!</p>
-              <div class="start-button-wrapper">
-                <a class="start-button btn btn-default" data-device="iphone" title="Show iPhone 6">iPhone 6</a>
-                <a class="start-button btn btn-default" data-device="s7" title="Show Samsung Galaxy S7">Galaxy S7</a>
-                <a class="start-button btn btn-default" data-device="ipad" title="Show iPad">iPad</a>
-                <a class="start-button btn btn-default" data-device="small-desktop" title="Show Small Desktop">Desktop</a>
-                <a class="start-button btn btn-default" data-device="hdtv" title="Show HDTV">HDTV</a>
-                <a class="start-button btn btn-default" data-device="custom" title="Show Custom">Custom</a>
-              </div>
-            </div>
-          </div>
-          <hr class="thick">
-
-          <h2>Devices:</h2>
-
-          <hr>
-
           <!-- Mobile -->
-          <div id="iphone" class="device-wrapper">
+          <div id="iphone" class="device-wrapper text-center">
             <h4 class="text-center">iPhone 6 <small>375 x 667px</small></h4>
-            <button class="center-block btn btn-primary btn-device-rotate" type="button">
+            <button class="button primary small btn-device-rotate margin-top-10" type="button">
               Rotate Device
-              &nbsp;<span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+              &nbsp;<span class="fa fa-refresh" aria-hidden="true"></span>
             </button>
             <div class="device iphone">
               <div class="image-background overflow"></div>
@@ -90,11 +125,11 @@
             <hr>
           </div>
 
-          <div id="s7" class="device-wrapper">
+          <div id="s7" class="device-wrapper text-center">
             <h4 class="text-center">Samsung Galaxy S7 <small>375 x 667px</small></h4>
-            <button class="center-block btn btn-primary btn-device-rotate" type="button">
+            <button class="button primary small btn-device-rotate margin-top-10" type="button">
               Rotate Device
-              &nbsp;<span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+              &nbsp;<span class="fa fa-refresh" aria-hidden="true"></span>
             </button>
             <div class="device s7">
               <div class="image-background overflow"></div>
@@ -105,11 +140,11 @@
 
 
           <!-- Tablet -->
-          <div id="ipad" class="device-wrapper">
+          <div id="ipad" class="device-wrapper text-center">
             <h4 class="text-center">Tablet <small>768 x 1024px</small></h4>
-            <button class="center-block btn btn-primary btn-device-rotate" type="button">
+            <button class="button primary small btn-device-rotate margin-top-10" type="button">
               Rotate Device
-              &nbsp;<span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+              &nbsp;<span class="fa fa-refresh" aria-hidden="true"></span>
             </button>
             <div class="device tablet">
               <div class="image-background overflow"></div>
@@ -120,7 +155,7 @@
 
 
           <!-- Small Desktop -->
-          <div id="small-desktop" class="device-wrapper">
+          <div id="small-desktop" class="device-wrapper text-center">
             <h4 class="text-center">Small Desktop <small>1440 x 900px (scaled 0.6x)</small></h4>
             <div class="device small-desktop">
               <div class="image-background overflow"></div>
@@ -131,7 +166,7 @@
 
 
           <!-- HD TV -->
-          <div id="hdtv" class="device-wrapper">
+          <div id="hdtv" class="device-wrapper text-center">
             <h4 class="text-center">HDTV <small>1440 x 900px (scaled 0.6x)</small></h4>
             <div class="device hdtv">
               <div class="image-background overflow"></div>
@@ -142,7 +177,7 @@
 
 
           <!-- Custom -->
-          <div id="custom" class="device-wrapper">
+          <div id="custom" class="device-wrapper text-center">
             <h4 class="text-center">Custom</h4>
             <div class="row">
               <div class="col-sm-4 col-sm-offset-4">
@@ -164,7 +199,7 @@
                   </div>
 
                   <div class="col-xs-3">
-                    <button id="device-custom-clear" class="btn btn-block">Clear</button>
+                    <button id="device-custom-clear" class="button secondary xx-small">Clear</button>
                   </div>
                 </div>
               </div>
@@ -176,124 +211,152 @@
           </div>
 
         </div>
-
-
-        <!-- Footer -->
-        <div class="footer">
-<!--           <div class="best-plack-to-work">
-            <img src="img/bptw_slim.png" alt="" />
-          </div> -->
-          <div class="copyright">
-            built by <a href="http://www.sitback.com.au" target="_blank">Sitback</a> /
-            <span class="sbw-abn"><abbr title="Australian Business Number">ABN</abbr> 67 118 118 737</span>
-          </div>
-          <div class="address">
-              39-41 Lower Fort Street
-              <br> Sydney NSW 2000, Australia
-          </div>
-
-          <div class="contact">
-              <img src="img/phone.svg" alt="Call us" class="icon"><a href="tel:+61 2 9247 2223">+61 2 9247 2223</a>
-              <br>
-              <img src="img/envelope.svg" alt="Email us" class="icon"><a href="mailto:hello@sitback.com.au">hello@sitback.com.au</a>
-          </div>
-        </div>
       </div>
 
       <div class="sidebar" data-spy="affix" data-offset-top="00">
-        <div class="sidebar-item">
-          <h4>Upload the image here:</h4>
-          <label class="upload-button btn btn-block">
+        <div class="sidebar-item text-center">
+          <h4>Upload image here:</h4>
+          <label class="upload-button button primary small margin-top-20">
             Upload Image&nbsp;&nbsp;
-            <span class="glyphicon glyphicon-open"></span>
+            <span class="fa fa-upload"></span>
             <input class="upload" name="fileUpload" type="file" id="uploaderFile">
           </label>
         </div>
 
-        <div class="sidebar-item" id="overflow-checkbox-wrap">
-          <div>
-            <h5>Toggle fill type:&nbsp;<a role="button" data-html="true" tabindex="0" data-container=".sidebar" class="btn btn-default btn-xs" data-toggle="popover" data-trigger="focus" data-placement="bottom" title="Fill type" data-content="Cover will completely fill the container with your image. Contain will show 100% of the image, with empty space around the image. <br><br>For more information <a title='MDN page for background-size' href='https://developer.mozilla.org/en-US/docs/Web/CSS/background-size#Values'>please visit the MDN page for background-size</a>">?</a></h5>
-            <select title="Toggle background fill type" id="toggle-bg-fill" class="form-control">
-              <option value="cover">Cover</option>
-              <option value="contain">Contain</option>
-            </select>
+        <div id="overflow-checkbox-wrap">
+
+          <div class="sidebar-item">
+            <div class="row between-sm middle-sm">
+              <h5 class="no-margin-top">Toggle fill type:</h5>
+              <div class="end-sm">
+                <a role="button" tabindex="0" class="button icon help secondary outline"><i class="fa"></i></a>
+              </div>
+              <div class="row row-counter">
+                <div class="panel small secondary help">
+                  <small>
+                    Cover will completely fill the container with your image. Contain will show 100% of the image, with empty space around the image. <br><br>For more information <a title='MDN page for background-size' href='https://developer.mozilla.org/en-US/docs/Web/CSS/background-size#Values'>please visit the MDN page for background-size</a>
+                  </small>
+                </div>
+              </div>          
+            </div>
+            <div>
+              <span class="checkbox">
+                <input id="bg-radio-cover" name="background-type" type="radio" checked="checked" value="cover">
+                <label for="bg-radio-cover">&nbsp;Cover</label>
+                <br>
+                <input id="bg-radio-Contain" name="background-type" type="radio" value="contain">
+                <label for="bg-radio-Contain">&nbsp;Contain</label>
+              </span>
+            </div>
           </div>
-          <hr>
-          <div>
-            <span class="checkbox">
-              <input id="overflow-checkbox" type="checkbox">
-              <label for="overflow-checkbox">&nbsp;Show overflow image</label>
-              <a role="button" data-html="true" tabindex="0" data-container=".sidebar" class="btn btn-default btn-xs" data-toggle="popover" data-trigger="focus" data-placement="bottom" title="Show overflow" data-content="This will let you see exactly how much of your image is being cut off by including a <em>ghost</em> of the original image over the top of the rendered background">?</a>
-            </span>
+          <div class="sidebar-item">
+            <div class="row between-sm middle-sm">
+              <span class="checkbox">
+                <input id="overflow-checkbox" type="checkbox">
+                <label for="overflow-checkbox">&nbsp;Show overflow image</label>
+              </span>
+              <a role="button" tabindex="0" class="button end-sm icon help secondary outline"><i class="fa "></i></a>
+            </div>
+            <div class="row row-counter">
+              <div class="panel small secondary help">
+                <small>
+                  This will let you see exactly how much of your image is being cut off by including a <em>ghost</em> of the original image over the top of the rendered background
+                </small>
+              </div>
+            </div>          
           </div>
         </div>
 
         <div class="sidebar-item">
-          <h5>Set a section height:&nbsp;<a role="button" data-html="true" tabindex="0" data-container=".sidebar" class="btn btn-default btn-xs" data-toggle="popover" data-trigger="focus" data-placement="bottom" title="Section Height" data-content="Changing the <b>section</b> height will give you a better idea of how your image will scale when used as a content background.">?</a></h5>
-          <div class="form-inline">
+          <div class="row between-sm middle-sm">
+            <h5 class="no-margin-top">Set a section height:</h5>
+            <div>
+              <a role="button" tabindex="0" class="button icon help secondary outline"><i class="fa "></i></a>
+            </div>
+          </div>
+          <div class="row row-counter">
+            <div class="panel small secondary help">
+              <small>
+                Changing the <strong>section</strong> height will give you a better idea of how your image will scale when used as a content background
+              </small>
+            </div>
+          </div>
+          <div class="form-inline margin-top-20 row between-sm middle-sm">
             <div class="input-group">
-              <input id="input-height" title="Set Section Height" class="form-control" type="text" placeholder="">
+              <input id="input-height" title="Set Section Height" class="form-control" type="text" placeholder="Height">
               <span class="input-group-addon">px</span>
             </div>
-            <button id="section-height-clear" class="btn">Clear</button>
+            <button id="section-height-clear" class="button secondary xx-small">Clear</button>
           </div>
         </div>
 
         <div class="sidebar-item">
-          <h5>Set background position: <a role="button" data-html="true" tabindex="0" data-container=".sidebar" class="btn btn-default btn-xs" data-toggle="popover" data-trigger="focus" data-placement="bottom" title="Background position" data-content="Depending on the image in use, and the surrounding content, you can change the <strong>anchor point</strong> of the background image. <br><br> The default is centred both vertically and horizontally.<br><br>For more information <a title='MDN page for background-position' href='https://developer.mozilla.org/en-US/docs/Web/CSS/background-position'> please visit the MDN page for background-position</a>">?</a></h5>
+          <div class="row between-sm middle-sm">
+            <h5 class="no-margin-top">Set background position:</h5>
+            <div>
+              <a role="button" tabindex="0" class="button icon help secondary outline"><i class="fa "></i></a>
+            </div>
+            <div class="row row-counter">
+              <div class="panel small secondary help">
+                <small>
+                  Depending on the image in use, and the surrounding content, you can change the <strong>anchor point</strong> of the background image. <br><br> The default is centred both vertically and horizontally.<br><br>For more information <a title='MDN page for background-position' href='https://developer.mozilla.org/en-US/docs/Web/CSS/background-position'> please visit the MDN page for background-position</a>
+                </small>
+              </div>
+            </div>          
+
           <ul class="bg-position-list">
-            <li class="bg-position-item top left">
+            <li class="bg-position-item no-margin-bottom top left">
               <input name="bg-position" type="radio" id="bgTopLeft" data-alignment="top left">
               <label title="Background position is 'top left'" for="bgTopLeft">
-                <span class="glyphicon glyphicon-arrow-left arrow-rotate-45"></span>
+                <span class="fa fa-fw fa-arrow-left arrow-rotate-45"></span>
               </label>
             </li>
-            <li class="bg-position-item top center">
+            <li class="bg-position-item no-margin-bottom top center">
               <input name="bg-position" type="radio" id="bgTop" data-alignment="top">
               <label title="Background position is 'top center'" for="bgTop">
-                <span class="glyphicon glyphicon-arrow-up"></span>
+                <span class="fa fa-fw fa-arrow-up"></span>
               </label>
             </li>
-            <li class="bg-position-item top right">
+            <li class="bg-position-item no-margin-bottom top right">
               <input name="bg-position" name="bg-position" type="radio" id="bgTopRight" data-alignment="top right">
               <label title="Background position is 'top right'" for="bgTopRight">
-                <span class="glyphicon glyphicon-arrow-up  arrow-rotate-45"></span>
+                <span class="fa fa-fw fa-arrow-up  arrow-rotate-45"></span>
               </label>
             </li>
-            <li class="bg-position-item middle left">
+            <li class="bg-position-item no-margin-bottom middle left">
               <input name="bg-position" type="radio" id="bgLeft" data-alignment="left">
               <label title="Background position is 'center left'" for="bgLeft">
-                <span class="glyphicon glyphicon-arrow-left"></span>
+                <span class="fa fa-fw fa-arrow-left"></span>
               </label>
             </li>
-            <li class="bg-position-item middle center">
+            <li class="bg-position-item no-margin-bottom middle center">
               <input name="bg-position" type="radio" id="bgCenter" checked="checked" data-alignment="center">
               <label title="Background position is 'center center'" for="bgCenter">
-                <span class="glyphicon glyphicon-record"></span>
+                <span class="fa fa-fw fa-dot-circle-o"></span>
               </label>
             </li>
-            <li class="bg-position-item middle right">
+            <li class="bg-position-item no-margin-bottom middle right">
               <input name="bg-position" type="radio" id="bgRight" data-alignment="right">
               <label title="Background position is 'center right'" for="bgRight">
-                <span class="glyphicon glyphicon-arrow-right"></span>
+                <span class="fa fa-fw fa-arrow-right"></span>
               </label>
             </li>
-            <li class="bg-position-item bottom left">
+            <li class="bg-position-item no-margin-bottom bottom left">
               <input name="bg-position" type="radio" id="bgBottomLeft" data-alignment="bottom left">
               <label title="Background position is 'bottom left'" for="bgBottomLeft">
-                <span class="glyphicon glyphicon-arrow-down arrow-rotate-45"></span>
+                <span class="fa fa-fw fa-arrow-down arrow-rotate-45"></span>
               </label>
             </li>
-            <li class="bg-position-item bottom center">
+            <li class="bg-position-item no-margin-bottom bottom center">
               <input name="bg-position" type="radio" id="bgBottom" data-alignment="bottom">
               <label title="Background position is 'bottom center'" for="bgBottom">
-                <span class="glyphicon glyphicon-arrow-down"></span>
+                <span class="fa fa-fw fa-arrow-down"></span>
               </label>
             </li>
-            <li class="bg-position-item bottom right">
+            <li class="bg-position-item no-margin-bottom bottom right">
               <input name="bg-position" type="radio" id="bgBottomRight" data-alignment="bottom right">
               <label title="Background position is 'bottom right'" for="bgBottomRight">
-                <span class="glyphicon glyphicon-arrow-right arrow-rotate-45"></span>
+                <span class="fa fa-fw fa-arrow-right arrow-rotate-45"></span>
               </label>
             </li>
           </ul>
@@ -330,6 +393,53 @@
         </div>
       </div>
     </div>
+    </div>
+
+    <div class="panel primary">
+  <div class="container">
+    <div class="row between-xs bottom-sm">
+      <div class="col-xs-12 col-sm">
+
+        <h4>
+          <span>We&rsquo;re in The Rocks </span>
+          <a href="https://goo.gl/maps/Ynt7t8KCuZv" title="Find Sitback on Google Maps" target="_blank"><small>&nbsp;[ map ]&nbsp;</small></a>
+        </h4>
+        <p class="hug">
+          <a href="https://www.google.com.au/maps/place/Sitback/@-33.8564434,151.2050245,17z/data=!3m1!4b1!4m5!3m4!1s0x6b12ae5ce22ca8bd:0x1d5bff2aa201ee00!8m2!3d-33.8564479!4d151.2072132" target="_blank">39-41 Lower Fort Street, Sydney NSW 2000 Australia</a>
+          <br>
+          +61 2 9247 2223 // <a href="mailto:hello@sitback.com.au">hello@sitback.com.au</a>
+        </p>
+      </div>
+
+
+      <div class="col-xs-12 col-sm end-sm margin-top-30 no-margin-top-sm">
+        <ul class="list-inline start-xs end-sm">
+          <li>
+            <a href="https://www.linkedin.com/company/sitback-solutions" target="_blank" class="button secondary outline square"><i class="fa fa-fw fa-lg fa-linkedin"></i></a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/Sitback-159057074134649/" target="_blank" class="button secondary outline square text-secondary"><i class="fa fa-fw fa-lg fa-facebook"></i></a>
+          </li>
+          <li>
+            <a href="https://twitter.com/sitback" target="_blank" class="button secondary outline square"><i class="fa fa-fw fa-lg fa-twitter"></i></a>
+          </li>
+        </ul>
+
+
+
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="copyright">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs">
+          <p class="text-right text-muted medium">© Sitback / ABN 67 118 118 737</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>

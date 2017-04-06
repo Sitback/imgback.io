@@ -1,0 +1,273 @@
+//
+// Forms
+// --------------------------------------------------
+
+%form-group {
+  font-size: inherit;
+}
+
+/* .form-group {
+  margin-top: 20px;
+
+  label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+
+  %form-field {
+    display: block;
+    width: 100%;
+    border-width: 0;
+    padding: 10px 8px;
+    box-shadow: inset 0 0 3px $black-25, inset 0 1px 2px $black-25;
+    transition: all .15s ease-in-out;
+
+    &:focus {
+      outline: 0;
+      box-shadow: inset 0 -2px 0 $primary;
+    }
+  }
+
+  input {
+    &[type='tel'],
+    &[type='text'],
+    &[type='date'],
+    &[type='email'] {
+      @extend %form-field;
+    }
+  }
+
+  textarea {
+    @extend %form-field;
+    min-height: 150px;
+  }
+} */
+
+//
+// Checkboxes and Radios
+// --------------------------------------------------
+//
+[type='password'],
+[type='text'] {
+  width: 100%;
+  border-width: 0;
+  border-bottom-width: 1px;
+  font-size: 80%;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+.h2 {
+
+  [type='text'] {
+    width: 100%;
+    height: (1.7 * $scale  + 1 )* 1rem;
+    font-size: 1.7 * $scale * 1rem;
+
+    &:focus {
+      outline: 0;
+
+      + label {
+        top: -16px;
+      }
+    }
+
+  }
+
+  &.floating-label {
+
+    label {
+      top: 12px;
+    }
+
+    &:focus,
+    &.is-populated {
+
+      > label {
+        top: -16px;
+      }
+    }
+  }
+}
+
+%radio-checkbox-input,
+.radio,
+.checkbox {
+  position: relative;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  label {
+    padding-left: 20px;
+    margin-bottom: 0;
+    font-weight: normal;
+    cursor: pointer;
+  }
+
+  input {
+    &[type='radio'],
+    &[type='checkbox'] {
+      position: absolute;
+      left: 0;
+      margin: 6px 0 0;
+      line-height: normal;
+    }
+  }
+
+  & + .radio,
+  & + .checkbox {
+    margin-top: -5px;
+  }
+}
+
+// Form elements
+
+.form-control {
+  border: 1px solid $alto;
+  box-shadow: none;
+  box-sizing: border-box;
+  padding-left: 0;
+  transition: all .2s ease;
+  padding: 11px 12px 10px;
+
+  &:focus {
+    box-shadow: none;
+    border-bottom: 2px solid $primary;
+    padding: 10px 12px 9px;
+  }
+
+  &.form-inline {
+    width: auto;
+    display: inline-block;
+  }
+}
+
+
+textarea {
+  &.form-control {
+    width: 100%;
+    line-height: 26px;
+    font-size: 13px;
+    padding: 6px 0;
+    background: url('../img/textarea-lines.png');
+    color: lighten($mine-shaft, 30%);
+
+    @media print {
+      &::before {
+        content: url('../img/textarea-lines.png');
+      }
+    }
+  }
+}
+
+
+// Floating label
+.floating-label {
+  position: relative;
+  padding-top: 10px;
+
+  label {
+    color: rgba($black, .26);
+    position: absolute;
+    top: 22px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin: 0;
+    pointer-events: none;
+    overflow: hidden;
+    font-weight: 400;
+    white-space: nowrap;
+    text-align: left;
+    transition: all .2s ease;
+  }
+
+  input {
+    height: 32px;
+
+    &:focus {
+      + label {
+        font-size: 12px;
+        top: 4px;
+      }
+    }
+  }
+
+  &.is-populated {
+    > label {
+      font-size: 12px;
+      top: 4px;
+    }
+  }
+
+  &.label-float-right {
+    input {
+      &:focus {
+        + label {
+          top: 22px;
+          left: 30px;
+          font-size: inherit;
+        }
+      }
+    }
+
+    &.is-populated {
+      > label {
+        top: 22px;
+        left: 30px;
+        font-size: inherit;
+      }
+    }
+  }
+}
+
+
+.error:not(:empty) {
+  display: inline-block;
+  margin-top: .5em;
+
+  &.text-danger {
+    color: $primary;
+  }
+}
+
+
+// Input groups
+.input-group {
+  display: flex;
+  align-items: stretch;
+
+  .input-group-addon,
+  .input-group-btn,
+  .form-control {
+    width: auto;
+  }
+  
+  .input-group-addon {
+    border: 1px solid $alto;
+    background-color: $concrete;
+    padding: 9px 5px 3px;
+    font-size: 13px;
+  }
+
+  .form-control {
+    + .input-group-addon {
+      border-left: 0;
+    }
+  }
+}
+
+// Input groups need that 100% width though
+.input-group > .form-control {
+  width: 100%;
+}
+
+.control-label {
+  margin-bottom: 0;
+  vertical-align: middle;
+}

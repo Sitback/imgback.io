@@ -1,0 +1,33 @@
+//
+// Off Canvas
+// --------------------------------------------------
+
+.wrapper {
+  position: relative;
+  display: flex;
+  min-height: 100%;
+  max-width: 100%;
+  margin: 0;
+
+  .sidebar {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: 230px;
+    padding: 20px 10px 20px 30px;
+    border-top: 2px solid $white;
+    background: $black-10;
+    box-shadow: inset 10px 0 10px -10px $black-50;
+  }
+
+  .content {
+    flex: 1;
+    background-color: $concrete;
+    transform: translate3d(0, 0, 0);
+    transition: transform .3s;
+
+    &.open {
+      transform: translate3d(-230px, 0, 0);
+    }
+  }
+}
