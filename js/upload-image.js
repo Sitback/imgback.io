@@ -23,11 +23,6 @@ $(document).ready(function(){
       customHeight = '.custom, .custom .image-background',
       helpIcon = '.icon.help';
 
-      $('#test_link').on('click', function() {
-        window.location = '/img/2L9A2117-High.jpg';
-      });
-
-
   // Show uploaded image as section background on each device.
   $(source).on('change', function () {
     readImage.onload = function (event) {
@@ -64,7 +59,6 @@ $(document).ready(function(){
     }
   });
 
-
   // Section height set.
   $(inputHeight).on('change', function() {
     var newHeight = $(inputHeight).val();
@@ -76,7 +70,6 @@ $(document).ready(function(){
     $(inputHeight).val('');
   });
 
-
   // Set background position
   $(inputBackgroundPosition).on('click', function() {
     var bgPosition = $(this).data('alignment');
@@ -84,7 +77,6 @@ $(document).ready(function(){
     $(deviceBackground).removeClass('top center bottom left right');
     $(deviceBackground).toggleClass(bgPosition);
   });
-
 
   // Show image overflow.
   $(overflowVisible).on('click', function() {
@@ -94,7 +86,6 @@ $(document).ready(function(){
       $(deviceOverflow).css('display', 'none');
     }
   });
-
 
   // Choose device
   function showDevice(e) {
@@ -106,6 +97,7 @@ $(document).ready(function(){
       });
       CalculateAndTransform($(e.data.device).find(".device"));
     } else {
+      resetTransform($(e.data.device).find(".device"));
       ga('send', 'event', 'devices', 'off', $this.data('device'));
       $(e.data.device).css({
         'display': 'none'
@@ -114,20 +106,30 @@ $(document).ready(function(){
   };
 
   function triggerDevice(e) {
-    var target = $(e.target);
-    var dev = target.data('device');
-    var device = $('#checkbox-' + dev);
-    device.trigger('click');
-    if (!!device.prop('checked')) {
-      target.removeClass('btn-default').addClass('btn-primary').removeClass('outline');
-      target.find("span.fa").removeClass("hidden");
-    } else {
-      target.addClass('btn-default').removeClass('btn-primary').addClass('outline');      
-      target.find("span.fa").addClass("hidden");
-    }
-  }
+    // stop the event from bubbling if we click an element inside the target
+    e.stopPropagation();
 
-  $('.start-button').on('click', triggerDevice);
+    var $target = $(e.target);
+    var device;
+
+    if (!$target.hasClass('start-button')) {
+      // reset the target to be the container we want to act 
+      // on if we click inside the target
+      $target = $target.parents('.start-button');
+    }
+
+    device = $('#checkbox-' + $target.data('device'));
+
+    device.trigger('click');
+
+    if (device.prop('checked')) {
+      $target.removeClass('outline').addClass('active');;
+    } else {
+      $target.addClass('outline').removeClass('active');;      
+    }
+  };
+
+  $('.start-button, .start-button > *').on('click', triggerDevice);
 
   $('#checkbox-' + deviceIphone)
     .on('click init', {device: '#' + deviceIphone}, showDevice)
@@ -154,7 +156,6 @@ $(document).ready(function(){
     $(deviceRotate).toggleClass('landscape');
   });
 
-
   // Custom device dimensions
   $(inputCustomWidth).on('change', function () {
     var newDeviceWidth = $(inputCustomWidth).val();
@@ -169,8 +170,33 @@ $(document).ready(function(){
     CalculateAndTransform();
   });
 
+  function fitToDevice(selector) {
+    var element = selector.get(0);
+    var scaleX = element.getBoundingClientRect().width / element.offsetWidth;
+    var $parent = $(selector).parents('.device-wrapper');
+    var $headerHeight = $parent.find('h4').height();
+
+    console.debug(scaleX);
+
+    $parent.css({
+      height: ($parent.height() * scaleX) + $headerHeight
+    })
+    $parent.find('span.scaled-value').html('(scaled ' + scaleX.toFixed(2) + 'x)');
+  }
+
+  function resetTransform(device) {
+    var device = device || $('.device.custom');
+    var transform = "scale(1) translate(0, 0)";
+    console.debug('resetting: ', transform);
+    $(device).css('transform', transform);  
+    $(device).parents('.device-wrapper').css({
+      height: 'auto'
+    });
+  }
+
   function CalculateAndTransform(device){
-    device = device || $(".device.custom");
+    var device = device || $(".device.custom");
+    resetTransform(device);
     var customParent = $(device).closest("div.device-wrapper");
     var width = customParent.width();
     var deviceWidth =  $(device).width() + parseInt($(device).css('borderLeft')) + parseInt($(device).css('borderRight'));
@@ -179,11 +205,12 @@ $(document).ready(function(){
       var height = customParent.height() * scale;
 
       var translateX = ((deviceWidth - width) / 2) * 100 / width;
-      var translateY = (($(device).height() - height) / 2) * 100 / height;
+//      var translateY = (($(device).height() - height) / 2) * 100 / height;
+      var translateY = 0;
       var transform = "scale(" + scale + ") translate(" + ((-1) * translateX) + "%, " + ((-1) * translateY) + "%)";
-      $(device).css('transform', transform);          
+      $(device).css('transform', transform);
+      fitToDevice(device);    
     }
-    
   }  
 
   $(customHeightClear).on('click', function () {
@@ -192,6 +219,4 @@ $(document).ready(function(){
     $(inputCustomWidth).val('');
     $(inputCustomHeight).val('');
   });
-
-  $('[data-toggle="popover"]').popover();
 });

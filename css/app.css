@@ -10332,6 +10332,16 @@ body .hs-form .hs-button, .hs-button,
     min-width: 2em;
     height: 2em;
     line-height: 2em; }
+  .start-button.hs-button .fa-icon::before,
+  .button.start-button .fa-icon::before {
+    content: '\f067';
+    font-family: 'FontAwesome';
+    display: inline-block;
+    margin-left: .25em;
+    opacity: .5; }
+  .start-button.active.hs-button .fa-icon::before,
+  .button.start-button.active .fa-icon::before {
+    content: '\f068'; }
   body .hs-form .primary.hs-button, .primary.hs-button, body .hs-form .secondary.hs-button, .secondary.hs-button,
   .button.primary,
   .button.secondary {
@@ -10723,9 +10733,6 @@ abbr[title] {
   .primary-nav a {
     text-decoration: none;
     color: rgba(0, 0, 0, 0.5); }
-    @media (min-width: 768px) {
-      .primary-nav a {
-        padding: 5px 5px; } }
 
 .inline-nav {
   list-style: none;
@@ -11927,6 +11934,8 @@ hr.thick {
 
 h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
   color: #767676; }
+h1 a small, h2 a small, h3 a small, h4 a small, h5 a small, h6 a small {
+  color: white; }
 
 .sidebar {
   position: absolute;
@@ -12024,7 +12033,8 @@ input.upload {
   border-radius: 60px;
   background-color: #444444;
   border: 1px solid #333333;
-  box-shadow: 0 0 0 4px #b0b0b0; }
+  box-shadow: 0 0 0 4px #b0b0b0;
+  transform-origin: center top; }
 
 .image-background {
   background-position: center center;

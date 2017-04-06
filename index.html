@@ -49,38 +49,43 @@
         <div class="hidden-xs-only hidden-sm">
           <ul class="primary-nav row middle-md end-md">
             <li>
-              Start Here:
+              Start <i class="fa fa-arrow-right"><span class="sr-only">by selecting some devices</span></i>
             </li>
             <li>
-              <a class="start-button button primary outline" data-device="iphone" title="Show iPhone 6">
-                <span class="fa fa-circle hidden" aria-hidden="true"></span>&nbsp;
-                iPhone 6
-                </a>
+              <a class="start-button button small primary outline" data-device="iphone" title="Show iPhone 6">
+                <span class="button-label">iPhone 6</span>
+                <span class="fa fa-fw fa-icon" aria-hidden="true"></span>
+              </a>
             </li>
             <li>
-              <a class="start-button button primary outline" data-device="s7" title="Show Samsung Galaxy S7">
-                <span class="fa fa-circle hidden" aria-hidden="true"></span>&nbsp;
-                Galaxy S7</a>
+              <a class="start-button button small primary outline" data-device="s7" title="Show Samsung Galaxy S7">
+                <span class="button-label">Galaxy S7</span>
+                <span class="fa fa-fw fa-icon" aria-hidden="true"></span>
+              </a>
             </li>
             <li>
-              <a class="start-button button primary outline" data-device="ipad" title="Show iPad">
-                <span class="fa fa-circle hidden" aria-hidden="true"></span>&nbsp;
-                iPad</a>
+              <a class="start-button button small primary outline" data-device="ipad" title="Show iPad">
+                <span class="button-label">iPad</span>
+                <span class="fa fa-fw fa-icon" aria-hidden="true"></span>
+              </a>
             </li>
             <li>
-              <a class="start-button button primary outline" data-device="small-desktop" title="Show Small Desktop">
-                <span class="fa fa-circle hidden" aria-hidden="true"></span>&nbsp;
-                Desktop</a>
+              <a class="start-button button small primary outline" data-device="small-desktop" title="Show Small Desktop">
+                <span class="button-label">Desktop</span>
+                <span class="fa fa-fw fa-icon" aria-hidden="true"></span>
+              </a>
             </li>
             <li>
-              <a class="start-button button primary outline" data-device="hdtv" title="Show HDTV">
-                <span class="fa fa-circle hidden" aria-hidden="true"></span>&nbsp;
-                HDTV</a>
+              <a class="start-button button small primary outline" data-device="hdtv" title="Show HDTV">
+                <span class="button-label">HDTV</span>
+                <span class="fa fa-fw fa-icon" aria-hidden="true"></span>
+              </a>
             </li>
             <li>
-              <a class="start-button button primary outline" data-device="custom" title="Show Custom">
-                <span class="fa fa-circle hidden" aria-hidden="true"></span>&nbsp;
-                Custom</a>
+              <a class="start-button button small primary outline" data-device="custom" title="Show Custom">
+                <span class="button-label">Custom</span>
+                <span class="fa fa-fw fa-icon" aria-hidden="true"></span>
+              </a>
             </li>
           </ul>
         </div>
@@ -113,7 +118,7 @@
         <div class="content">
           <!-- Mobile -->
           <div id="iphone" class="device-wrapper text-center">
-            <h4 class="text-center">iPhone 6 <small>375 x 667px</small></h4>
+            <h4 class="text-center">iPhone 6 <small>375 x 667px <span class="scaled-value"></span></small> </h4>
             <button class="button primary small btn-device-rotate margin-top-10" type="button">
               Rotate Device
               &nbsp;<span class="fa fa-refresh" aria-hidden="true"></span>
@@ -126,7 +131,7 @@
           </div>
 
           <div id="s7" class="device-wrapper text-center">
-            <h4 class="text-center">Samsung Galaxy S7 <small>375 x 667px</small></h4>
+            <h4 class="text-center">Samsung Galaxy S7 <small>375 x 667px <span class="scaled-value"></span></small></h4>
             <button class="button primary small btn-device-rotate margin-top-10" type="button">
               Rotate Device
               &nbsp;<span class="fa fa-refresh" aria-hidden="true"></span>
@@ -141,7 +146,7 @@
 
           <!-- Tablet -->
           <div id="ipad" class="device-wrapper text-center">
-            <h4 class="text-center">Tablet <small>768 x 1024px</small></h4>
+            <h4 class="text-center">Tablet <small>768 x 1024px <span class="scaled-value"></span></small></h4>
             <button class="button primary small btn-device-rotate margin-top-10" type="button">
               Rotate Device
               &nbsp;<span class="fa fa-refresh" aria-hidden="true"></span>
@@ -156,7 +161,7 @@
 
           <!-- Small Desktop -->
           <div id="small-desktop" class="device-wrapper text-center">
-            <h4 class="text-center">Small Desktop <small>1440 x 900px (scaled 0.6x)</small></h4>
+            <h4 class="text-center">Small Desktop <small>1440 x 900px <span class="scaled-value"></span></small></h4>
             <div class="device small-desktop">
               <div class="image-background overflow"></div>
               <div class="device-screen image-background"></div>
@@ -167,7 +172,7 @@
 
           <!-- HD TV -->
           <div id="hdtv" class="device-wrapper text-center">
-            <h4 class="text-center">HDTV <small>1440 x 900px (scaled 0.6x)</small></h4>
+            <h4 class="text-center">HDTV <small>1440 x 900px <span class="scaled-value"></span></small></h4>
             <div class="device hdtv">
               <div class="image-background overflow"></div>
               <div class="device-screen image-background"></div>
@@ -178,7 +183,7 @@
 
           <!-- Custom -->
           <div id="custom" class="device-wrapper text-center">
-            <h4 class="text-center">Custom</h4>
+            <h4 class="text-center">Custom <small><span class="scaled-value"></span></small></h4>
             <div class="row">
               <div class="col-sm-4 col-sm-offset-4">
                 <div class="flex-justify-center">
