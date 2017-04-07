@@ -59,6 +59,30 @@
     line-height: 2em;    
   }
 
+  &.start-button {
+
+    .fa-icon {
+
+      &::before {
+        content: '\f067';
+        font-family: 'FontAwesome';
+        display: inline-block;
+        margin-left: .25em;
+        opacity: .5;
+      }
+    }
+
+    &.active {
+
+      .fa-icon {
+
+        &::before {
+          content: '\f068';
+        }
+      }
+    }
+  }
+
   // Variants
   &.primary,
   &.secondary {
