@@ -1,0 +1,38 @@
+//
+// Tile - A clickable box of content
+// --------------------------------------------------
+
+.tile {
+  padding: 20px 25px;
+  border: 2px dashed transparent;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+
+  @media (min-width: $screen-sm) {
+    flex: 1;
+    margin: 0 15px;
+    padding: 15px;
+  }
+
+  @media (min-width: $screen-md) {
+    padding: 20px 25px;
+  }
+
+  &.active,
+  &:hover {
+    border-color: $black-50;
+  }
+
+}
+
+.panel {
+  &.primary,
+  &.secondary {
+    .tile {
+      &.active,
+      &:hover {
+        border-color: $white-50;
+      }
+    }
+  }
+}

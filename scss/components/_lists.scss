@@ -1,0 +1,170 @@
+ul,
+ol {
+  margin-top: $leading;
+  margin-bottom: $leading / 1.5;
+
+  li {
+    line-height: $leading;
+    margin-bottom: .5em;
+  }
+
+  ul,
+  ol {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 2rem;
+  }
+
+  &%list-unstyled,
+  &.list-unstyled {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  &.list-default {
+    list-style: none;
+    padding-left: 1.5rem;
+
+    li {
+      list-style-type: none;
+
+      &::before {
+        content: '\f22d';
+        font-family: 'FontAwesome';
+        color: $primary;
+        display: inline-block;
+        float: left;
+        margin-left: -1.5em;
+        margin-right: .5em;
+        font-size: 85%;
+      }
+    }
+  }
+
+  &.list-check {
+    list-style: none;
+    padding-left: 1.4rem;
+
+    li {
+      list-style-type: none;
+      margin-bottom: .75em;
+
+      &::before {
+        content: '\f046';
+        font-family: 'FontAwesome';
+        color: $primary;
+        display: inline-block;
+        float: left;
+        margin-left: -1.5em;
+        margin-right: .5em;
+        font-size: 85%;
+      }
+    }
+  }
+
+  &.inline-nav {
+    &.lead {
+      counter-reset: leadListCounter;
+
+      li {
+        list-style-type: none;
+
+        a {
+
+          &::before {
+            content: counter(leadListCounter, decimal-leading-zero) '/';
+            counter-increment: leadListCounter;
+          }
+        }
+      }
+    }
+  }
+
+  &.list-numbered {
+    counter-reset: listNumberedCounter;
+    padding-left: 0;
+
+    > li {
+      list-style-type: none;
+      margin-left: 2rem;
+
+      &::before {
+        @extend %font-secondary;
+        content: counter(listNumberedCounter, decimal-leading-zero) '/';
+        counter-increment: listNumberedCounter;
+        display: inline-block;
+        margin-left: -2rem;
+        padding-right: .5rem;
+      }
+
+      .list-default {
+        li {
+          &::before {
+            color: $secondary;
+          }
+        }
+      }
+    }
+  }
+
+  &.tabbed-filter {
+
+    li {
+      flex-grow: 1;
+      text-align: center;
+      padding: 0;
+
+      a {
+        line-height: 3;
+        cursor: pointer;
+        border: 1px solid transparent;
+        border-bottom-color: $secondary;
+        display: block;
+
+        &.active {
+          border-color: $secondary;
+          border-bottom-color: transparent;
+          color: $primary;
+
+          &:hover {
+            border-color: $primary;
+            border-bottom-color: transparent;
+          }
+        }
+
+        &:hover {
+          border-bottom-color: $primary;
+          color: $primary;
+        }
+      }
+    }
+  }
+
+  &.list-inline {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    li {
+      &:not(:first-child) {
+        padding-left: 5px;
+      }
+    }
+  }
+
+  &.list-justified {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+    li {
+      flex: 1;
+    }
+  }
+}
+
+
+

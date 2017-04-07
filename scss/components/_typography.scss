@@ -1,0 +1,289 @@
+//
+// Typography
+// --------------------------------------------------
+
+
+
+// Type variables.
+$base-font-size: 16;
+$base-line-height: 1.5;
+$leading: $base-line-height * 1rem;
+$scale: 1.414;
+
+html {
+  @extend %font-primary;
+  font-size: $base-font-size / 16 * 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+// Copy & Lists
+p {
+  line-height: $leading;
+  margin-top: $leading;
+  margin-bottom: 0;
+}
+
+a {
+  text-decoration: none;
+  color: $secondary;
+  border-bottom: 1px solid transparent;
+
+  &:hover {
+    border-bottom-color: $primary;
+    color: $primary;
+  }
+
+  &.button {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &.link-heading {
+    border-bottom: 2px solid $secondary;
+
+    &:hover {
+      border-bottom-color: $logo-highlight;
+    }
+  }
+
+  &.no-decoration {
+    border-bottom-width: 0;
+  }
+
+  &.header-nav {
+
+    &.active {
+      border-bottom: 2px solid $logo-highlight;
+    }
+  }
+}
+
+em {
+  font-style: italic;
+}
+
+blockquote {
+  line-height: $leading;
+  margin-top: $leading / 2;
+  margin-bottom: $leading / 2;
+  font-style: italic;
+
+  @media (min-width: $screen-sm) {
+    margin-top: $leading;
+    margin-bottom: $leading;
+  }
+
+  footer {
+    text-align: right;
+  }
+
+  &.small {
+    padding: 20px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  &.default {
+    background-color: $black-10;
+  }
+
+  &.alternative {
+    margin: .1rem;
+
+    footer {
+      text-align: center;
+    }
+  }
+}
+
+hr {
+  border-bottom-width: 0;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.heavy {
+  font-weight: 600;
+}
+
+.medium {
+  font-weight: 400;
+}
+
+.light {
+  font-weight: 300;
+}
+
+// Headings
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @extend %font-secondary;
+  margin-top: $leading;
+  margin-bottom: 0;
+  line-height: $leading * 1.5;
+  color: $secondary;
+
+  &.sub-heading {
+    @extend %font-primary;
+    color: $mine-shaft;
+  }
+
+  &.super {
+    @media (min-width: $screen-sm) {
+      font-size: 4 * $scale * 1rem;
+      line-height: $leading * 5.5;
+      margin-bottom: $leading * 1.5;
+    }
+  }
+
+  &.primary {
+    color: $primary;
+  }
+
+  &.secondary {
+    color: $secondary;
+  }
+}
+
+.h1,
+h1 {
+  font-size: 3 * $scale * 1rem;
+  line-height: 3 * $leading;
+  margin-top: 2 * $leading;
+}
+
+.h2,
+h2 {
+  font-size: 1.7 * $scale * 1rem;
+  line-height: 1.7 * $leading;
+  margin-top: 1.7  * $leading;
+}
+
+.h3,
+h3 {
+  font-size: 1.2 * $scale * 1rem;
+}
+
+.h4,
+h4 {
+  font-size: $scale / 1.1 * 1rem;
+}
+
+.h5,
+h5 {
+  font-size: $scale / 1.4 * 1rem;
+}
+
+.h6,
+h6 {
+  font-size: $scale / 4 * 1rem;
+}
+
+
+// Text utilities
+// Leading paragraph text
+.lead {
+  font-size: $scale * .9rem;
+  line-height: 1.5 * $leading;
+  color: $mine-shaft;
+}
+
+// Hug a the block above
+%hug,
+.hug {
+  margin-top: 0;
+}
+
+// Text Positioning
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.inline {
+  display: inline;
+}
+
+// Text transform
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+// Text Weight
+.text-bold {
+  font-weight: 700;
+}
+
+.text-light {
+  font-weight: 300;
+}
+
+// Text Colours
+.text-white {
+  color: $white;
+}
+
+.text-primary {
+  color: $primary;
+}
+
+.text-secondary {
+  color: $secondary;
+}
+
+.text-muted {
+  color: $dove-gray;
+}
+
+.highlight {
+  color: $primary;
+}
+
+.lowlight {
+  color: $secondary;
+}
+
+.logotype {
+  @extend %font-secondary;
+  font-weight: 400;
+  text-transform: lowercase;
+  font-size: 105%;
+
+}
+
+abbr {
+
+  &[title] {
+    text-decoration: none;
+    border-bottom: 1px dotted $concrete;
+    cursor: help;
+  }
+}
+
+.muted {
+  color: lighten($mine-shaft, 20%);
+}

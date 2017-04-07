@@ -1,0 +1,58 @@
+//
+// Flex Box Grid Overrides
+// --------------------------------------------------
+
+$grid-columns: 12;
+
+$gutter-width: 1rem;
+
+$outer-margin: 2rem;
+
+$breakpoints:
+sm 48em 46rem,
+md 62em 61rem,
+lg 75em 78rem;
+
+$flexboxgrid-max-width: 1200px;
+
+
+// .center-xs should be for centering columns in the row. Not the content inside.
+.start-xs,
+.center-xs {
+  text-align: inherit;
+}
+
+
+// Expand Flexbox Grid
+.stretch-xs {
+  align-items: stretch;
+}
+
+// Makes child hog all available free space from siblings
+.flex-hog {
+  flex: 100;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+
+
+  > {
+    .end-xs {
+      text-align: unset;
+    }
+  }
+}
+
+// Switch to max width based container widths
+@each $breakpoint in $breakpoints {
+  $size: nth($breakpoint, 2);
+  $container: nth($breakpoint, 3);
+  @media only screen and (min-width: $size) {
+    .container {
+      width: 100%;
+      max-width: $container;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+.sample-script-title {
+  min-height: 50px;
+}
+
+.sample-script-block {
+  &.flex-row > .flex-grid-item {
+    display: flex;
+    flex-direction: row;
+
+    .panel-body {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .sample-script-title {
+        flex-grow: 1;
+      }
+    }
+  }
+}

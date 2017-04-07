@@ -1,0 +1,43 @@
+.workshop-content {
+  textarea {
+    &.form-control {
+      min-height: 155px;
+    }
+  }
+}
+
+.workshop-content-activities {
+  .ui-sortable {
+    padding-left: 0;
+
+    .workshop-activity-item {
+      input {
+        width: 100%;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      &.break-component {
+        background-color: $firefly;
+        color: $white;
+
+        .ember-text-field,
+        label {
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+.workshop-action-list {
+  display: flex;
+  flex-direction: row-reverse;
+
+  > div {
+    flex: 0 auto;
+    margin-left: 15px;
+  }
+}

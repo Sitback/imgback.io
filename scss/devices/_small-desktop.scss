@@ -8,7 +8,7 @@ $small-desktop-height: 900px;
   width: $small-desktop-width + 100px; // 1440px + left and right border width
   height: $small-desktop-height + 130px; // 900px + top and bottom border width
   border-width: 50px 50px 80px;
-  transform: scale(0.6) translate(0, -32%);
+  transform: scale(0.6) translate(-20%, -32%);
 
   // Laptop Base
   &:after {

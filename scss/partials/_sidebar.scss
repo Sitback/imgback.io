@@ -1,0 +1,56 @@
+
+.sidebar {
+  $sidebar-width: 260px;
+  width: $sidebar-width;
+  background-color: $gallery;
+  position: relative;
+
+  @media print {
+    display: none;
+  }
+
+  .sidebar-inner {
+    position: fixed;
+    width: $sidebar-width;
+    padding: 20px 20px 67px;
+    overflow: scroll;
+    max-height: calc(100% - 98px);
+    background: #EEE;
+
+    h6 {
+      font-size: 100%;
+    }
+  }
+}
+
+.list-group {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.list-group-item {
+  cursor: pointer;
+  border: 1px solid darken($concrete, 20%);
+  border-bottom-color: transparent;
+  padding: 1em;
+  background: $white;
+  margin: 0;
+  font-size: 80%;
+
+  h5 {
+    font-size: 90%;
+  }
+
+  &:last-of-type {
+    border-bottom-color: darken($concrete, 20%);
+  }
+
+  &:hover {
+    border-color: $primary;
+
+    h5 {
+      color: $primary;
+    }
+  }
+}

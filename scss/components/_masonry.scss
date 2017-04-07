@@ -1,0 +1,66 @@
+//
+// Masonry Grid settings
+// --------------------------------------------------
+
+.masonry-grid-wrapper {
+  .loading {
+    opacity: 0;
+  }
+
+  .loaded {
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+  }
+}
+
+.masonry-grid {
+  &::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+.client-item {
+  width: calc(100% - 10px);
+  margin: 0 4px 8px;
+  display: flex;
+  align-items: center;
+  background-color: $concrete;
+
+  @media (min-width: $screen-sm) {
+    min-height: 220px;
+    width: calc(50% - 10px);
+  }
+
+  @media (min-width: $screen-md) {
+    min-height: 200px;
+    width: calc(25% - 10px);
+  }
+
+  img {
+    padding: 35px;
+    min-height: 75px;
+  }
+
+  // &:hover {
+  //   background-color: darken($concrete, 5%);
+  // }
+
+  &.active {
+    width: calc(100% - 8px);
+    z-index: 1;
+
+    @media (min-width: $screen-sm) {
+      width: calc(50% - 8px);
+    }
+
+    > .panel {
+      min-height: 760px;
+    }
+
+    img {
+      padding: 10px;
+    }
+  }
+}
