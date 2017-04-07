@@ -10034,7 +10034,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  padding-top: 68px;
+  padding-top: 75px;
   padding-right: 250px; }
 
 .margin-top-5 {
@@ -11939,7 +11939,7 @@ h1 a small, h2 a small, h3 a small, h4 a small, h5 a small, h6 a small {
 
 .sidebar {
   position: absolute;
-  top: 68px;
+  top: 78px;
   height: calc(100vh - 78px);
   width: 250px;
   right: 0;
@@ -12322,16 +12322,18 @@ input.upload {
     max-height: 1080px; }
 
 .custom {
-  width: 592px;
-  height: 464px;
+  min-width: calc(200px + 80px);
+  min-height: calc(300px + 80px);
   border-width: 40px;
   box-sizing: content-box; }
   .custom .device-screen {
-    width: 512px;
-    height: 384px;
-    max-height: 384px; }
+    width: 100%;
+    height: 100%;
+    min-width: 200px;
+    min-height: 300px; }
   .custom .overflow {
-    height: 384px;
-    max-height: 384px; }
+    height: 100%;
+    min-width: 200px;
+    min-height: 300px; }
 
 /*# sourceMappingURL=app.css.map */
