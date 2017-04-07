@@ -10034,7 +10034,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  padding-top: 75px;
+  padding-top: 68px;
   padding-right: 250px; }
 
 .margin-top-5 {
@@ -11939,7 +11939,7 @@ h1 a small, h2 a small, h3 a small, h4 a small, h5 a small, h6 a small {
 
 .sidebar {
   position: absolute;
-  top: 78px;
+  top: 68px;
   height: calc(100vh - 78px);
   width: 250px;
   right: 0;
