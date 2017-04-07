@@ -154,6 +154,8 @@ $(document).ready(function(){
   $(deviceRotate).on('click', function () {
     var deviceRotate = $(this).parent('.device-wrapper').find('.device');
     $(deviceRotate).toggleClass('landscape');
+    var $this = $(this);
+    CalculateAndTransform($this.siblings(".device"));
   });
 
   // Custom device dimensions
@@ -176,8 +178,6 @@ $(document).ready(function(){
     var $parent = $(selector).parents('.device-wrapper');
     var $headerHeight = $parent.find('h4').height();
 
-    console.debug(scaleX);
-
     $parent.css({
       height: ($parent.height() * scaleX) + $headerHeight
     })
@@ -185,13 +185,14 @@ $(document).ready(function(){
   }
 
   function resetTransform(device) {
-    var device = device || $('.device.custom');
+    var device = device || '.device.custom';
+    var $device = $(device);
     var transform = "scale(1) translate(0, 0)";
-    console.debug('resetting: ', transform);
-    $(device).css('transform', transform);  
-    $(device).parents('.device-wrapper').css({
+    $device.css('transform', transform);  
+    $device.parents('.device-wrapper').css({
       height: 'auto'
     });
+    $device.parents('.device-wrapper').find('span.scaled-value').empty();
   }
 
   function CalculateAndTransform(device){
