@@ -192,7 +192,7 @@ h1 a small, h2 a small, h3 a small, h4 a small, h5 a small, h6 a small {
   top: 78px;
   height: calc(100vh - 78px);
   width: 250px;
-  right: 0;
+  left: 0;
   padding: 0 20px;
   overflow: scroll;
   background-color: #ffffff;

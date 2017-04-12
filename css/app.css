@@ -10035,7 +10035,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   padding-top: 75px;
-  padding-right: 250px; }
+  padding-left: 250px; }
 
 .margin-top-5 {
   margin-top: 5px !important; }
@@ -10362,7 +10362,8 @@ body .hs-form .hs-button, .hs-button,
     .primary.hs-button:active,
     .button.primary:active {
       border-color: #c0212a;
-      background-color: #c0212a; }
+      background-color: #c0212a;
+      color: white; }
     .primary.outline.hs-button,
     .button.primary.outline {
       border-color: #d6252f;
@@ -11942,7 +11943,7 @@ h1 a small, h2 a small, h3 a small, h4 a small, h5 a small, h6 a small {
   top: 78px;
   height: calc(100vh - 78px);
   width: 250px;
-  right: 0;
+  left: 0;
   padding: 0 20px;
   overflow: scroll;
   background-color: #ffffff;
