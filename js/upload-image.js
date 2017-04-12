@@ -87,68 +87,62 @@ $(document).ready(function(){
     }
   });
 
-  // Choose device
-  function showDevice(e) {
-    var $this = $(this);
-    if($this.prop('checked') == true) {
-      ga('send', 'event', 'devices', 'on', $this.data('device'));
-      $(e.data.device).css({
-        'display': 'block'
-      });
-      CalculateAndTransform($(e.data.device).find(".device"));
-    } else {
-      resetTransform($(e.data.device).find(".device"));
-      ga('send', 'event', 'devices', 'off', $this.data('device'));
-      $(e.data.device).css({
-        'display': 'none'
-      });
-    }
-  };
+  function showDevice(device) {
+    ga('send', 'event', 'devices', 'on', device);
+    $('#' + device).show();
+    CalculateAndTransform($('#' + device).find(".device"));
+  }
+
+  function hideDevice(device) {
+    ga('send', 'event', 'devices', 'off', device);
+    $('#' + device).hide();
+    resetTransform($('#' + device).find(".device"));
+  }
 
   function triggerDevice(e) {
-    // stop the event from bubbling if we click an element inside the target
     e.stopPropagation();
+    var device = e.target.dataset.device || e.target.parentNode.dataset.device || false;
+    var el = (e.target.dataset.device) ? e : (e.target.parentNode.dataset.device) ? e.target.parentNode : null;
+    var willBecomeActive = false;
 
-    var $target = $(e.target);
-    var device;
-
-    if (!$target.hasClass('start-button')) {
-      // reset the target to be the container we want to act 
-      // on if we click inside the target
-      $target = $target.parents('.start-button');
+    if (!device || !el) {
+      console.warn("You have clicked on a device or element that does not exist");
+      return false;
     }
 
-    device = $('#checkbox-' + $target.data('device'));
-
-    device.trigger('click');
-
-    if (device.prop('checked')) {
-      $target.removeClass('outline').addClass('active');;
+    var elementList = document.querySelectorAll('[data-device="' + device + '"]');
+    if (e.target.nodeName === "INPUT") {
+      if (e.target.checked) {
+        willBecomeActive = true;
+      }
+    } else if (e.target.nodeName === "A") {
+      if (!e.target.classList.contains('active')) {
+        willBecomeActive = true;
+      }
     } else {
-      $target.addClass('outline').removeClass('active');;      
+      if (!e.target.parentNode.classList.contains('active')) {
+        willBecomeActive = true;
+      }
     }
-  };
 
-  $('.start-button, .start-button > *').on('click', triggerDevice);
+    if (willBecomeActive) {
+      for (let element of elementList) {
+        element.classList.add('active');
+        element.classList.remove('outline')
+        element.checked = true;
+      }
+      showDevice(device);
+    } else {
+      for (let element of elementList) {
+        element.classList.remove('active');
+        element.classList.add('outline')
+        element.checked = false;
+      }
+      hideDevice(device);
+    }
+  }
 
-  $('#checkbox-' + deviceIphone)
-    .on('click init', {device: '#' + deviceIphone}, showDevice)
-    .trigger('init');
-  $('#checkbox-' + deviceS7)
-    .on('click init', {device: '#' + deviceS7}, showDevice)
-    .trigger('init');
-  $('#checkbox-' + deviceIpad)
-    .on('click init', {device: '#' + deviceIpad}, showDevice)
-    .trigger('init');
-  $('#checkbox-' + deviceSmallDesktop)
-    .on('click init', {device: '#' + deviceSmallDesktop}, showDevice)
-    .trigger('init');
-  $('#checkbox-' + deviceHdtv)
-    .on('click init', {device: '#' + deviceHdtv}, showDevice)
-    .trigger('init');
-  $('#checkbox-' + deviceCustom)
-    .on('click init', {device: '#' + deviceCustom}, showDevice)
-    .trigger('init');
+  $('[rel="device-trigger"]').on('click', triggerDevice);
 
   // Rotate Device
   $(deviceRotate).on('click', function () {

@@ -18,9 +18,6 @@
     <link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#d6252f">
     <meta name="theme-color" content="#D6252F">
     <script src="https://use.fontawesome.com/30f3ebe5d2.js"></script>
-
-<!--     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> -->
-<!--     <link rel="stylesheet" href="css/style.css"> -->
     <link rel="stylesheet" href="css/app.css">
   </head>
   <body>
@@ -52,37 +49,37 @@
               Start <i class="fa fa-arrow-right"><span class="sr-only">by selecting some devices</span></i>
             </li>
             <li>
-              <a class="start-button button small primary outline" data-device="iphone" title="Show iPhone 6">
+              <a rel="device-trigger" class="start-button button small primary outline" data-device="iphone" title="Show iPhone 6">
                 <span class="button-label">iPhone 6</span>
                 <span class="fa fa-fw fa-icon" aria-hidden="true"></span>
               </a>
             </li>
             <li>
-              <a class="start-button button small primary outline" data-device="s7" title="Show Samsung Galaxy S7">
+              <a rel="device-trigger" class="start-button button small primary outline" data-device="s7" title="Show Samsung Galaxy S7">
                 <span class="button-label">Galaxy S7</span>
                 <span class="fa fa-fw fa-icon" aria-hidden="true"></span>
               </a>
             </li>
             <li>
-              <a class="start-button button small primary outline" data-device="ipad" title="Show iPad">
+              <a rel="device-trigger" class="start-button button small primary outline" data-device="ipad" title="Show iPad">
                 <span class="button-label">iPad</span>
                 <span class="fa fa-fw fa-icon" aria-hidden="true"></span>
               </a>
             </li>
             <li>
-              <a class="start-button button small primary outline" data-device="small-desktop" title="Show Small Desktop">
+              <a rel="device-trigger" class="start-button button small primary outline" data-device="desktop" title="Show Small Desktop">
                 <span class="button-label">Desktop</span>
                 <span class="fa fa-fw fa-icon" aria-hidden="true"></span>
               </a>
             </li>
             <li>
-              <a class="start-button button small primary outline" data-device="hdtv" title="Show HDTV">
+              <a rel="device-trigger" class="start-button button small primary outline" data-device="hdtv" title="Show HDTV">
                 <span class="button-label">HDTV</span>
                 <span class="fa fa-fw fa-icon" aria-hidden="true"></span>
               </a>
             </li>
             <li>
-              <a class="start-button button small primary outline" data-device="custom" title="Show Custom">
+              <a rel="device-trigger" class="start-button button small primary outline" data-device="custom" title="Show Custom">
                 <span class="button-label">Custom</span>
                 <span class="fa fa-fw fa-icon" aria-hidden="true"></span>
               </a>
@@ -111,10 +108,6 @@
 
     <div class="flex-row flex-hog">
       <div class="container">
-<!--         <div class="jumbotron header">
-          <h1><span class="feature-icon glyphicon glyphicon-phone"></span> Image Background Previewer.</h1>
-        </div>
- -->
         <div class="content">
           <!-- Mobile -->
           <div id="iphone" class="device-wrapper text-center">
@@ -160,7 +153,7 @@
 
 
           <!-- Small Desktop -->
-          <div id="small-desktop" class="device-wrapper text-center">
+          <div id="desktop" class="device-wrapper text-center">
             <h4 class="text-center">Small Desktop <small>1440 x 900px <span class="scaled-value"></span></small></h4>
             <div class="device small-desktop">
               <div class="image-background overflow"></div>
@@ -371,27 +364,27 @@
           <h5>Choose devices:&nbsp;</h5>
           <ul class="list-unstyled" id="device-list">
             <li class="checkbox">
-              <input type="checkbox" id="checkbox-iphone" data-device="iPhone">
+              <input rel="device-trigger" type="checkbox" id="checkbox-iphone" data-device="iphone">
               <label for="checkbox-iphone">&nbsp;iPhone 6</label>
             </li>
             <li class="checkbox">
-              <input type="checkbox" id="checkbox-s7" data-device="Galaxy S7">
+              <input rel="device-trigger" type="checkbox" id="checkbox-s7" data-device="s7">
               <label for="checkbox-s7">&nbsp;Samsung Galaxy S7</label>
             </li>
             <li class="checkbox">
-              <input type="checkbox" id="checkbox-ipad" data-device="iPad">
+              <input rel="device-trigger" type="checkbox" id="checkbox-ipad" data-device="ipad">
               <label for="checkbox-ipad">&nbsp;iPad</label>
             </li>
             <li class="checkbox">
-              <input type="checkbox" id="checkbox-small-desktop" data-device="Small Desktop">
+              <input rel="device-trigger" type="checkbox" id="checkbox-small-desktop" data-device="desktop">
               <label for="checkbox-small-desktop">&nbsp;Small Desktop</label>
             </li>
             <li class="checkbox">
-              <input type="checkbox" id="checkbox-hdtv" data-device="HDTV">
+              <input rel="device-trigger" type="checkbox" id="checkbox-hdtv" data-device="hdtv">
               <label for="checkbox-hdtv">&nbsp;HDTV</label>
             </li>
             <li class="checkbox">
-              <input type="checkbox" id="checkbox-custom" data-device="Custom">
+              <input rel="device-trigger" type="checkbox" id="checkbox-custom" data-device="custom">
               <label for="checkbox-custom">&nbsp;Custom</label>
             </li>
           </ul>
