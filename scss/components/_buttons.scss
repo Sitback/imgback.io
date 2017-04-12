@@ -106,6 +106,7 @@
     &:active {
       border-color: darken($primary, 5%);
       background-color: darken($primary, 5%);
+      color: $white;
     }
 
     &.outline {
