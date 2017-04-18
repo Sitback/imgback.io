@@ -140,3 +140,10 @@
     }
   }
 }
+
+.content-wrapper {
+  
+  .panel:first-child {
+    border-top: 0;
+  }
+}
