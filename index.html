@@ -1,34 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Background image previewer &ndash; built by Sitback</title>
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-1735300-5', 'auto');
-      ga('send', 'pageview');
-    </script>
-    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
-    <link rel="icon" type="image/png" href="img/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="img/favicon-16x16.png" sizes="16x16">
-    <link rel="manifest" href="img/manifest.json">
-    <link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#d6252f">
-    <meta name="theme-color" content="#D6252F">
-    <script src="https://use.fontawesome.com/30f3ebe5d2.js"></script>
-    <link rel="stylesheet" href="css/app.css">
-  </head>
-  <body>
+
+<head>
+  <meta charset="utf-8">
+  <title>Background image previewer &ndash; built by Sitback</title>
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-1735300-5', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <link rel="apple-touch-icon" sizes="180x180" href="./img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="./img/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="./img/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="./manifest.json">
+  <link rel="mask-icon" href="./img/safari-pinned-tab.svg" color="#d6252f">
+  <meta name="theme-color" content="#D6252F">
+  <script src="https://use.fontawesome.com/30f3ebe5d2.js"></script>
+  <link rel="stylesheet" href="./css/app.css">
+</head>
+
+<body>
 
   <header class="sitback-header navbar">
     <div class="row between-xs middle-xs bottom-md">
       <div class="col-xs-9 col-sm">
         <div class="logo-wrap">
-          <a href="/" class="logo">    
+          <a href="/" class="logo">
             <h3 class="logo-title text-regular flex-grid-item stretch">
-              Image  previewer<sup class="beta">[beta]</sup> by <span class="logotype"><span class="highlight">Sitback</span></span>
+              Image previewer<sup class="beta">[beta]</sup> by <span class="logotype"><span
+                  class="highlight">Sitback</span></span>
             </h3>
           </a>
         </div>
@@ -49,37 +54,43 @@
               Start <i class="fa fa-arrow-right"><span class="sr-only">by selecting some devices</span></i>
             </li>
             <li>
-              <a rel="device-trigger" class="start-button button small primary outline" data-device="iphone" title="Show iPhone 6">
+              <a rel="device-trigger" class="start-button button small primary outline" data-device="iphone"
+                title="Show iPhone 6">
                 <span class="button-label">iPhone 6</span>
                 <span class="fa fa-fw fa-icon" aria-hidden="true"></span>
               </a>
             </li>
             <li>
-              <a rel="device-trigger" class="start-button button small primary outline" data-device="s7" title="Show Samsung Galaxy S7">
+              <a rel="device-trigger" class="start-button button small primary outline" data-device="s7"
+                title="Show Samsung Galaxy S7">
                 <span class="button-label">Galaxy S7</span>
                 <span class="fa fa-fw fa-icon" aria-hidden="true"></span>
               </a>
             </li>
             <li>
-              <a rel="device-trigger" class="start-button button small primary outline" data-device="ipad" title="Show iPad">
+              <a rel="device-trigger" class="start-button button small primary outline" data-device="ipad"
+                title="Show iPad">
                 <span class="button-label">iPad</span>
                 <span class="fa fa-fw fa-icon" aria-hidden="true"></span>
               </a>
             </li>
             <li>
-              <a rel="device-trigger" class="start-button button small primary outline" data-device="desktop" title="Show Small Desktop">
+              <a rel="device-trigger" class="start-button button small primary outline" data-device="desktop"
+                title="Show Small Desktop">
                 <span class="button-label">Desktop</span>
                 <span class="fa fa-fw fa-icon" aria-hidden="true"></span>
               </a>
             </li>
             <li>
-              <a rel="device-trigger" class="start-button button small primary outline" data-device="hdtv" title="Show HDTV">
+              <a rel="device-trigger" class="start-button button small primary outline" data-device="hdtv"
+                title="Show HDTV">
                 <span class="button-label">HDTV</span>
                 <span class="fa fa-fw fa-icon" aria-hidden="true"></span>
               </a>
             </li>
             <li>
-              <a rel="device-trigger" class="start-button button small primary outline" data-device="custom" title="Show Custom">
+              <a rel="device-trigger" class="start-button button small primary outline" data-device="custom"
+                title="Show Custom">
                 <span class="button-label">Custom</span>
                 <span class="fa fa-fw fa-icon" aria-hidden="true"></span>
               </a>
@@ -90,17 +101,21 @@
     </div>
   </header>
 
-    <!-- Sitback header -->
+  <!-- Sitback header -->
   <div class="content-wrapper flex-grid-item">
 
     <div class="panel large">
       <div class="container">
-        <h2 class="text-center medium">                
+        <h2 class="text-center medium">
           Hate dealing with background images?
         </h2>
         <div class="row around-xs">
           <div class="col-xs-12 col-sm-10">
-            <p class="lead text-center">The <span class="logotype"><span class="highlight">Sitback</span> <span class="lowlight"></span></span> image previewer will allow you to preview background images that you are going to use on your website in a variety of view modes, and at a variety of resolutions. It will give you a reasonable overview of how your image will look after implementation, and give you a guide as to how to create your images to keep the most important information on screen at all times.</p>
+            <p class="lead text-center">The <span class="logotype"><span class="highlight">Sitback</span> <span
+                  class="lowlight"></span></span> image previewer will allow you to preview background images that you
+              are going to use on your website in a variety of view modes, and at a variety of resolutions. It will give
+              you a reasonable overview of how your image will look after implementation, and give you a guide as to how
+              to create your images to keep the most important information on screen at all times.</p>
           </div>
         </div>
       </div>
@@ -182,7 +197,8 @@
                 <div class="flex-justify-center">
                   <div class="col-xs-4">
                     <div class="input-group">
-                      <input id="custom-device-width" title="Custom device width" class="form-control" type="text" placeholder="Width">
+                      <input id="custom-device-width" title="Custom device width" class="form-control" type="text"
+                        placeholder="Width">
                       <span class="input-group-addon">px</span>
                     </div>
                   </div>
@@ -191,7 +207,8 @@
 
                   <div class="col-xs-4">
                     <div class="input-group">
-                      <input id="custom-device-height" title="Custom device height" class="form-control" type="text" placeholder="Height">
+                      <input id="custom-device-height" title="Custom device height" class="form-control" type="text"
+                        placeholder="Height">
                       <span class="input-group-addon">px</span>
                     </div>
                   </div>
@@ -232,10 +249,13 @@
               <div class="row row-counter">
                 <div class="panel small secondary help">
                   <small>
-                    Cover will completely fill the container with your image. Contain will show 100% of the image, with empty space around the image. <br><br>For more information <a title='MDN page for background-size' href='https://developer.mozilla.org/en-US/docs/Web/CSS/background-size#Values'>please visit the MDN page for background-size</a>
+                    Cover will completely fill the container with your image. Contain will show 100% of the image, with
+                    empty space around the image. <br><br>For more information <a title='MDN page for background-size'
+                      href='https://developer.mozilla.org/en-US/docs/Web/CSS/background-size#Values'>please visit the
+                      MDN page for background-size</a>
                   </small>
                 </div>
-              </div>          
+              </div>
             </div>
             <div>
               <span class="checkbox">
@@ -258,10 +278,11 @@
             <div class="row row-counter">
               <div class="panel small secondary help">
                 <small>
-                  This will let you see exactly how much of your image is being cut off by including a <em>ghost</em> of the original image over the top of the rendered background
+                  This will let you see exactly how much of your image is being cut off by including a <em>ghost</em> of
+                  the original image over the top of the rendered background
                 </small>
               </div>
-            </div>          
+            </div>
           </div>
         </div>
 
@@ -275,7 +296,8 @@
           <div class="row row-counter">
             <div class="panel small secondary help">
               <small>
-                Changing the <strong>section</strong> height will give you a better idea of how your image will scale when used as a content background
+                Changing the <strong>section</strong> height will give you a better idea of how your image will scale
+                when used as a content background
               </small>
             </div>
           </div>
@@ -297,151 +319,164 @@
             <div class="row row-counter">
               <div class="panel small secondary help">
                 <small>
-                  Depending on the image in use, and the surrounding content, you can change the <strong>anchor point</strong> of the background image. <br><br> The default is centred both vertically and horizontally.<br><br>For more information <a title='MDN page for background-position' href='https://developer.mozilla.org/en-US/docs/Web/CSS/background-position'> please visit the MDN page for background-position</a>
+                  Depending on the image in use, and the surrounding content, you can change the <strong>anchor
+                    point</strong> of the background image. <br><br> The default is centred both vertically and
+                  horizontally.<br><br>For more information <a title='MDN page for background-position'
+                    href='https://developer.mozilla.org/en-US/docs/Web/CSS/background-position'> please visit the MDN
+                    page for background-position</a>
                 </small>
               </div>
-            </div>          
+            </div>
 
-          <ul class="bg-position-list">
-            <li class="bg-position-item no-margin-bottom top left">
-              <input name="bg-position" type="radio" id="bgTopLeft" data-alignment="top left">
-              <label title="Background position is 'top left'" for="bgTopLeft">
-                <span class="fa fa-fw fa-arrow-left arrow-rotate-45"></span>
-              </label>
-            </li>
-            <li class="bg-position-item no-margin-bottom top center">
-              <input name="bg-position" type="radio" id="bgTop" data-alignment="top">
-              <label title="Background position is 'top center'" for="bgTop">
-                <span class="fa fa-fw fa-arrow-up"></span>
-              </label>
-            </li>
-            <li class="bg-position-item no-margin-bottom top right">
-              <input name="bg-position" name="bg-position" type="radio" id="bgTopRight" data-alignment="top right">
-              <label title="Background position is 'top right'" for="bgTopRight">
-                <span class="fa fa-fw fa-arrow-up  arrow-rotate-45"></span>
-              </label>
-            </li>
-            <li class="bg-position-item no-margin-bottom middle left">
-              <input name="bg-position" type="radio" id="bgLeft" data-alignment="left">
-              <label title="Background position is 'center left'" for="bgLeft">
-                <span class="fa fa-fw fa-arrow-left"></span>
-              </label>
-            </li>
-            <li class="bg-position-item no-margin-bottom middle center">
-              <input name="bg-position" type="radio" id="bgCenter" checked="checked" data-alignment="center">
-              <label title="Background position is 'center center'" for="bgCenter">
-                <span class="fa fa-fw fa-dot-circle-o"></span>
-              </label>
-            </li>
-            <li class="bg-position-item no-margin-bottom middle right">
-              <input name="bg-position" type="radio" id="bgRight" data-alignment="right">
-              <label title="Background position is 'center right'" for="bgRight">
-                <span class="fa fa-fw fa-arrow-right"></span>
-              </label>
-            </li>
-            <li class="bg-position-item no-margin-bottom bottom left">
-              <input name="bg-position" type="radio" id="bgBottomLeft" data-alignment="bottom left">
-              <label title="Background position is 'bottom left'" for="bgBottomLeft">
-                <span class="fa fa-fw fa-arrow-down arrow-rotate-45"></span>
-              </label>
-            </li>
-            <li class="bg-position-item no-margin-bottom bottom center">
-              <input name="bg-position" type="radio" id="bgBottom" data-alignment="bottom">
-              <label title="Background position is 'bottom center'" for="bgBottom">
-                <span class="fa fa-fw fa-arrow-down"></span>
-              </label>
-            </li>
-            <li class="bg-position-item no-margin-bottom bottom right">
-              <input name="bg-position" type="radio" id="bgBottomRight" data-alignment="bottom right">
-              <label title="Background position is 'bottom right'" for="bgBottomRight">
-                <span class="fa fa-fw fa-arrow-right arrow-rotate-45"></span>
-              </label>
-            </li>
-          </ul>
-        </div>
+            <ul class="bg-position-list">
+              <li class="bg-position-item no-margin-bottom top left">
+                <input name="bg-position" type="radio" id="bgTopLeft" data-alignment="top left">
+                <label title="Background position is 'top left'" for="bgTopLeft">
+                  <span class="fa fa-fw fa-arrow-left arrow-rotate-45"></span>
+                </label>
+              </li>
+              <li class="bg-position-item no-margin-bottom top center">
+                <input name="bg-position" type="radio" id="bgTop" data-alignment="top">
+                <label title="Background position is 'top center'" for="bgTop">
+                  <span class="fa fa-fw fa-arrow-up"></span>
+                </label>
+              </li>
+              <li class="bg-position-item no-margin-bottom top right">
+                <input name="bg-position" name="bg-position" type="radio" id="bgTopRight" data-alignment="top right">
+                <label title="Background position is 'top right'" for="bgTopRight">
+                  <span class="fa fa-fw fa-arrow-up  arrow-rotate-45"></span>
+                </label>
+              </li>
+              <li class="bg-position-item no-margin-bottom middle left">
+                <input name="bg-position" type="radio" id="bgLeft" data-alignment="left">
+                <label title="Background position is 'center left'" for="bgLeft">
+                  <span class="fa fa-fw fa-arrow-left"></span>
+                </label>
+              </li>
+              <li class="bg-position-item no-margin-bottom middle center">
+                <input name="bg-position" type="radio" id="bgCenter" checked="checked" data-alignment="center">
+                <label title="Background position is 'center center'" for="bgCenter">
+                  <span class="fa fa-fw fa-dot-circle-o"></span>
+                </label>
+              </li>
+              <li class="bg-position-item no-margin-bottom middle right">
+                <input name="bg-position" type="radio" id="bgRight" data-alignment="right">
+                <label title="Background position is 'center right'" for="bgRight">
+                  <span class="fa fa-fw fa-arrow-right"></span>
+                </label>
+              </li>
+              <li class="bg-position-item no-margin-bottom bottom left">
+                <input name="bg-position" type="radio" id="bgBottomLeft" data-alignment="bottom left">
+                <label title="Background position is 'bottom left'" for="bgBottomLeft">
+                  <span class="fa fa-fw fa-arrow-down arrow-rotate-45"></span>
+                </label>
+              </li>
+              <li class="bg-position-item no-margin-bottom bottom center">
+                <input name="bg-position" type="radio" id="bgBottom" data-alignment="bottom">
+                <label title="Background position is 'bottom center'" for="bgBottom">
+                  <span class="fa fa-fw fa-arrow-down"></span>
+                </label>
+              </li>
+              <li class="bg-position-item no-margin-bottom bottom right">
+                <input name="bg-position" type="radio" id="bgBottomRight" data-alignment="bottom right">
+                <label title="Background position is 'bottom right'" for="bgBottomRight">
+                  <span class="fa fa-fw fa-arrow-right arrow-rotate-45"></span>
+                </label>
+              </li>
+            </ul>
+          </div>
 
-        <div class="sidebar-item">
-          <h5>Choose devices:&nbsp;</h5>
-          <ul class="list-unstyled" id="device-list">
-            <li class="checkbox">
-              <input rel="device-trigger" type="checkbox" id="checkbox-iphone" data-device="iphone">
-              <label for="checkbox-iphone">&nbsp;iPhone 6</label>
-            </li>
-            <li class="checkbox">
-              <input rel="device-trigger" type="checkbox" id="checkbox-s7" data-device="s7">
-              <label for="checkbox-s7">&nbsp;Samsung Galaxy S7</label>
-            </li>
-            <li class="checkbox">
-              <input rel="device-trigger" type="checkbox" id="checkbox-ipad" data-device="ipad">
-              <label for="checkbox-ipad">&nbsp;iPad</label>
-            </li>
-            <li class="checkbox">
-              <input rel="device-trigger" type="checkbox" id="checkbox-small-desktop" data-device="desktop">
-              <label for="checkbox-small-desktop">&nbsp;Small Desktop</label>
-            </li>
-            <li class="checkbox">
-              <input rel="device-trigger" type="checkbox" id="checkbox-hdtv" data-device="hdtv">
-              <label for="checkbox-hdtv">&nbsp;HDTV</label>
-            </li>
-            <li class="checkbox">
-              <input rel="device-trigger" type="checkbox" id="checkbox-custom" data-device="custom">
-              <label for="checkbox-custom">&nbsp;Custom</label>
-            </li>
-          </ul>
+          <div class="sidebar-item">
+            <h5>Choose devices:&nbsp;</h5>
+            <ul class="list-unstyled" id="device-list">
+              <li class="checkbox">
+                <input rel="device-trigger" type="checkbox" id="checkbox-iphone" data-device="iphone">
+                <label for="checkbox-iphone">&nbsp;iPhone 6</label>
+              </li>
+              <li class="checkbox">
+                <input rel="device-trigger" type="checkbox" id="checkbox-s7" data-device="s7">
+                <label for="checkbox-s7">&nbsp;Samsung Galaxy S7</label>
+              </li>
+              <li class="checkbox">
+                <input rel="device-trigger" type="checkbox" id="checkbox-ipad" data-device="ipad">
+                <label for="checkbox-ipad">&nbsp;iPad</label>
+              </li>
+              <li class="checkbox">
+                <input rel="device-trigger" type="checkbox" id="checkbox-small-desktop" data-device="desktop">
+                <label for="checkbox-small-desktop">&nbsp;Small Desktop</label>
+              </li>
+              <li class="checkbox">
+                <input rel="device-trigger" type="checkbox" id="checkbox-hdtv" data-device="hdtv">
+                <label for="checkbox-hdtv">&nbsp;HDTV</label>
+              </li>
+              <li class="checkbox">
+                <input rel="device-trigger" type="checkbox" id="checkbox-custom" data-device="custom">
+                <label for="checkbox-custom">&nbsp;Custom</label>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
     </div>
 
     <div class="panel primary">
-  <div class="container">
-    <div class="row between-xs bottom-sm">
-      <div class="col-xs-12 col-sm">
+      <div class="container">
+        <div class="row between-xs bottom-sm">
+          <div class="col-xs-12 col-sm">
 
-        <h4>
-          <span>We&rsquo;re in The Rocks </span>
-          <a href="https://goo.gl/maps/Ynt7t8KCuZv" title="Find Sitback on Google Maps" target="_blank"><small>&nbsp;[ map ]&nbsp;</small></a>
-        </h4>
-        <p class="hug">
-          <a href="https://www.google.com.au/maps/place/Sitback/@-33.8564434,151.2050245,17z/data=!3m1!4b1!4m5!3m4!1s0x6b12ae5ce22ca8bd:0x1d5bff2aa201ee00!8m2!3d-33.8564479!4d151.2072132" target="_blank">39-41 Lower Fort Street, Sydney NSW 2000 Australia</a>
-          <br>
-          +61 2 9247 2223 // <a href="mailto:hello@sitback.com.au">hello@sitback.com.au</a>
-        </p>
-      </div>
-
-
-      <div class="col-xs-12 col-sm end-sm margin-top-30 no-margin-top-sm">
-        <ul class="list-inline start-xs end-sm">
-          <li>
-            <a href="https://www.linkedin.com/company/sitback-solutions" target="_blank" class="button secondary outline square"><i class="fa fa-fw fa-lg fa-linkedin"></i></a>
-          </li>
-          <li>
-            <a href="https://www.facebook.com/Sitback-159057074134649/" target="_blank" class="button secondary outline square text-secondary"><i class="fa fa-fw fa-lg fa-facebook"></i></a>
-          </li>
-          <li>
-            <a href="https://twitter.com/sitback" target="_blank" class="button secondary outline square"><i class="fa fa-fw fa-lg fa-twitter"></i></a>
-          </li>
-        </ul>
+            <h4>
+              <span>We&rsquo;re in The Rocks </span>
+              <a href="https://goo.gl/maps/Ynt7t8KCuZv" title="Find Sitback on Google Maps"
+                target="_blank"><small>&nbsp;[ map ]&nbsp;</small></a>
+            </h4>
+            <p class="hug">
+              <a href="https://www.google.com.au/maps/place/Sitback/@-33.8564434,151.2050245,17z/data=!3m1!4b1!4m5!3m4!1s0x6b12ae5ce22ca8bd:0x1d5bff2aa201ee00!8m2!3d-33.8564479!4d151.2072132"
+                target="_blank">39-41 Lower Fort Street, Sydney NSW 2000 Australia</a>
+              <br>
+              +61 2 9247 2223 // <a href="mailto:hello@sitback.com.au">hello@sitback.com.au</a>
+            </p>
+          </div>
 
 
+          <div class="col-xs-12 col-sm end-sm margin-top-30 no-margin-top-sm">
+            <ul class="list-inline start-xs end-sm">
+              <li>
+                <a href="https://www.linkedin.com/company/sitback-solutions" target="_blank"
+                  class="button secondary outline square"><i class="fa fa-fw fa-lg fa-linkedin"></i></a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/Sitback-159057074134649/" target="_blank"
+                  class="button secondary outline square text-secondary"><i class="fa fa-fw fa-lg fa-facebook"></i></a>
+              </li>
+              <li>
+                <a href="https://twitter.com/sitback" target="_blank" class="button secondary outline square"><i
+                    class="fa fa-fw fa-lg fa-twitter"></i></a>
+              </li>
+            </ul>
 
-      </div>
-    </div>
-  </div>
-  </div>
-  <div class="copyright">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs">
-          <p class="text-right text-muted medium">© Sitback / ABN 67 118 118 737</p>
+
+
+          </div>
         </div>
       </div>
     </div>
-  </div>
+    <div class="copyright">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs">
+            <p class="text-right text-muted medium">© Sitback / ABN 67 118 118 737</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="js/upload-image.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-  </body>
+    <script src="js/pwa.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+      integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+      crossorigin="anonymous"></script>
+</body>
+
 </html>
