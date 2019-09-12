@@ -6,6 +6,7 @@
   "background_color": "#D6252F",
   "description": "Sitback Image Background Tester",
   "theme_color": "#D6252F",
+  "orientation": "portrait",
   "icons": [
     {
       "src": "./img/android-chrome-192x192.png",
